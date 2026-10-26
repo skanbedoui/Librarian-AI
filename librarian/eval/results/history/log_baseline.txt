@@ -1,0 +1,29 @@
+Saved -> C:\Users\skand\AppData\Local\Packages\Claude_pzs8sxrjxfjjc\LocalCache\Roaming\Claude\scratch-workspaces\f77f08e3-c4c5-4958-bec3-c0e8969f7964\47a55c60-74a1-4a95-a1c4-7b0ea9d9897d\scratch-2026-10-26-831336\librarian\eval\results\generation_baseline.json
+{
+  "config": "baseline",
+  "settings": {
+    "search_mode": "hybrid+rerank",
+    "top_k": 10,
+    "n_context": 5,
+    "gen_model": "gpt-4.1-mini",
+    "rerank_model": "gpt-4o-mini",
+    "rewrite_query": true,
+    "skip_rerank_if_confident": false,
+    "use_cache": false,
+    "min_relevance": 3.0
+  },
+  "n_questions": 122,
+  "accuracy_overall": 0.9918032786885246,
+  "correctness_answerable": 1.0,
+  "faithfulness": 1.0,
+  "citation_accuracy": 1.0,
+  "idk_when_should": 0.9285714285714286,
+  "idk_when_should_not": 0.0,
+  "latency_p50_s": 3.1903683000127785,
+  "latency_p95_s": 4.8760961049876625,
+  "cost_per_request_usd": 0.0007413515573770491,
+  "cost_per_request_list_usd": 0.000973089262295082,
+  "cost_per_month_today_usd": 4.448109344262295,
+  "cost_per_month_100x_usd": 444.8109344262295,
+  "rerank_rate": 1.0
+}

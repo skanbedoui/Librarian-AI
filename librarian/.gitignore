@@ -1,0 +1,5 @@
+.env
+.streamlit/secrets.toml
+__pycache__/
+index_sweep/
+data/feedback.jsonl
