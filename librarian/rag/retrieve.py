@@ -13,7 +13,7 @@ import numpy as np
 from rank_bm25 import BM25Okapi
 
 from .config import INDEX_DIR
-from .index import load_index
+from .index import load_index, ensure_index
 from .llm import embed, chat, Usage
 
 STOPWORDS = set("""a an the of to in on for and or is are be by with at as it this that what which who
@@ -26,37 +26,40 @@ def tokenize(text: str) -> list[str]:
 
 class Retriever:
     def __init__(self, index_dir=INDEX_DIR):
+        if index_dir == INDEX_DIR:      # the main index follows docs/ automatically
+            ensure_index(index_dir)
         self.chunks, self.vectors = load_index(index_dir)
         # BM25 is cheap to build, so we rebuild it at start-up instead of saving it.
         self.bm25 = BM25Okapi([tokenize(c["section"] + " " + c["text"]) for c in self.chunks])
 
     # ----- helpers -----
-    def _allowed(self, program):
-        """Metadata filter: only search the guide for the student's program (or all)."""
-        return np.array([program in (None, "all") or c["program"] == program for c in self.chunks])
+    def _allowed(self, files):
+        """Metadata filter: only search the given documents (None = search everything).
+        The app searches everything; the filter is there for callers that need it."""
+        return np.array([files is None or c["file"] in files for c in self.chunks])
 
     # ----- the 4 search modes -----
-    def keyword_search(self, query, k, program=None):
+    def keyword_search(self, query, k, files=None):
         scores = self.bm25.get_scores(tokenize(query))
-        scores[~self._allowed(program)] = -np.inf
+        scores[~self._allowed(files)] = -np.inf
         top = np.argsort(-scores)[:k]
         return [(int(i), float(scores[i])) for i in top if scores[i] > 0]
 
-    def vector_search(self, query, k, program=None, usage=None, query_vec=None):
+    def vector_search(self, query, k, files=None, usage=None, query_vec=None):
         if query_vec is None:
             query_vec = embed([query], usage)[0]
         sims = self.vectors @ query_vec          # cosine similarity (vectors are normalised)
-        sims[~self._allowed(program)] = -np.inf
+        sims[~self._allowed(files)] = -np.inf
         top = np.argsort(-sims)[:k]
         return [(int(i), float(sims[i])) for i in top]
 
-    def hybrid_search(self, query, k, program=None, usage=None):
+    def hybrid_search(self, query, k, files=None, usage=None):
         """
         Reciprocal Rank Fusion: score = sum over both lists of 1 / (60 + rank).
         It only uses ranks, so we never have to compare BM25 scores with cosine scores.
         """
-        kw = self.keyword_search(query, k * 2, program)
-        vec = self.vector_search(query, k * 2, program, usage)
+        kw = self.keyword_search(query, k * 2, files)
+        vec = self.vector_search(query, k * 2, files, usage)
         fused = {}
         for results in (kw, vec):
             for rank, (idx, _) in enumerate(results):
@@ -89,16 +92,16 @@ class Retriever:
         return [(i, float(s)) for i, s in ranked]
 
     # ----- one entry point used by the pipeline and by the evals -----
-    def search(self, query, mode, k, program=None, rerank_model="gpt-4o-mini",
+    def search(self, query, mode, k, files=None, rerank_model="gpt-4o-mini",
                skip_rerank_if_confident=False, usage=None):
         """Returns (ranked list of (chunk_index, score), info dict for the UI)."""
         info = {"mode": mode, "reranked": False, "confident": None}
         if mode == "keyword":
-            return self.keyword_search(query, k, program), info
+            return self.keyword_search(query, k, files), info
         if mode == "vector":
-            return self.vector_search(query, k, program, usage), info
+            return self.vector_search(query, k, files, usage), info
 
-        ranked, confident = self.hybrid_search(query, k, program, usage)
+        ranked, confident = self.hybrid_search(query, k, files, usage)
         info["confident"] = confident
         if mode == "hybrid" or (skip_rerank_if_confident and confident):
             return ranked, info

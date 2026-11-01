@@ -5,11 +5,13 @@ For every chunk with enough content, an LLM writes ONE question a real student c
 plus the answer, using only that chunk. The chunk is saved as the "source passage".
 We then add hand-written questions the guides CANNOT answer, to test "I don't know".
 
-IMPORTANT: generated questions must be reviewed by a human. Our review removed 2 items
-(see postmortem.md). Re-running this script overwrites the reviewed file.
+IMPORTANT: generated questions must be reviewed by a human (see postmortem.md).
 
-Run:  python -m eval.make_questions
+Run:  python -m eval.make_questions --new-docs-only   (after adding PDFs: adds questions for the
+                                                        new documents, keeps the reviewed ones)
+      python -m eval.make_questions                   (start over: OVERWRITES the reviewed file)
 """
+import argparse
 import json
 import random
 import sys
@@ -21,7 +23,8 @@ from rag.config import DATA_DIR
 from rag.index import load_index
 from rag.llm import chat
 
-SYSTEM = """You write evaluation questions for a Q&A bot about a university student guide.
+SYSTEM = """You write evaluation questions for a Q&A bot about a university's documents
+(student guides, program catalogues, brochures).
 Given ONE passage, write a question that a real student might ask and that this passage answers.
 - Phrase it naturally, like a student would (no "according to the passage").
 - The answer must be a specific fact found in the passage (a number, rule, condition, name...).
@@ -59,20 +62,38 @@ def make_one(chunk):
     if q.get("skip") or not q.get("question"):
         return None
     return {"question": q["question"], "answer": q["answer"], "answerable": True,
-            "source_chunk_id": chunk["id"], "file": chunk["file"], "program": chunk["program"],
+            "source_chunk_id": chunk["id"], "file": chunk["file"],
             "page": chunk["page"], "passage": chunk["text"]}
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--new-docs-only", action="store_true",
+                    help="only write questions for documents that have none yet, and keep the existing ones")
+    args = ap.parse_args()
+    path = DATA_DIR / "eval_questions.json"
     chunks, _ = load_index()
-    with ThreadPoolExecutor(8) as pool:
-        items = [q for q in pool.map(make_one, chunks) if q]
-    items += [{"question": q, "answer": "I don't know", "answerable": False} for q in UNANSWERABLE]
-    random.Random(0).shuffle(items)
-    for n, item in enumerate(items):
-        item["id"] = n
+
+    if args.new_docs_only:
+        items = json.loads(path.read_text(encoding="utf-8"))
+        covered = {q.get("file") for q in items}
+        new_chunks = [c for c in chunks if c["file"] not in covered]
+        with ThreadPoolExecutor(8) as pool:
+            new = [q for q in pool.map(make_one, new_chunks) if q]
+        next_id = max(q["id"] for q in items) + 1
+        for n, q in enumerate(new):
+            q["id"] = next_id + n
+        items += new
+        print(f"Added {len(new)} questions for {len({c['file'] for c in new_chunks})} new documents")
+    else:
+        with ThreadPoolExecutor(8) as pool:
+            items = [q for q in pool.map(make_one, chunks) if q]
+        items += [{"question": q, "answer": "I don't know", "answerable": False} for q in UNANSWERABLE]
+        random.Random(0).shuffle(items)
+        for n, item in enumerate(items):
+            item["id"] = n
     DATA_DIR.mkdir(exist_ok=True)
-    (DATA_DIR / "eval_questions.json").write_text(json.dumps(items, indent=1, ensure_ascii=False), encoding="utf-8")
+    path.write_text(json.dumps(items, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"Saved {len(items)} questions ({sum(i['answerable'] for i in items)} answerable)")
 
 

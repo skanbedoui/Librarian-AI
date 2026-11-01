@@ -1,0 +1,104 @@
+[
+ {
+  "id": 129,
+  "question": "What is the threshold for BIM model submissions in Morocco's government-funded projects?",
+  "reason": "useless gold answer ('projects above a set threshold')"
+ },
+ {
+  "id": 134,
+  "question": "How long does the Executive Master in BIM & ERP Management program last?",
+  "reason": "duplicate of 133"
+ },
+ {
+  "id": 148,
+  "question": "How often do classes meet for the Executive Master in BIM & ERP Management program?",
+  "reason": "duplicate of 132 (2023 flyer)"
+ },
+ {
+  "id": 152,
+  "question": "How many modules are included in the core program curriculum for cybersecurity?",
+  "reason": "ambiguous: 'the cybersecurity program' (C|EH 20, CND 20, CHFI 16, essentials 12 modules)"
+ },
+ {
+  "id": 154,
+  "question": "What percentage of students say the program is effective in safeguarding organizations?",
+  "reason": "ambiguous: 'the program' (which certification?)"
+ },
+ {
+  "id": 159,
+  "question": "What topics are covered in the program related to endpoint security?",
+  "reason": "ambiguous: 'the program' (which certification?)"
+ },
+ {
+  "id": 160,
+  "question": "What are some of the key focus areas covered in the Enterprise Cloud Network Security program?",
+  "reason": "names a program that does not exist ('Enterprise Cloud Network Security program')"
+ },
+ {
+  "id": 161,
+  "question": "When are the evening classes for the cybersecurity program scheduled?",
+  "reason": "ambiguous: 'the cybersecurity program' (several certifications)"
+ },
+ {
+  "id": 166,
+  "question": "What types of forensic investigations does the program cover?",
+  "reason": "ambiguous: 'the program' (CHFI vs Digital Forensics Essentials)"
+ },
+ {
+  "id": 172,
+  "question": "Are there any specific prerequisites to enroll in the digital forensics program?",
+  "reason": "ambiguous: 'the digital forensics program' (CHFI vs Digital Forensics Essentials)"
+ },
+ {
+  "id": 174,
+  "question": "How many modules are included in the ethical hacking certificate program?",
+  "reason": "ambiguous: 'the ethical hacking certificate program' (C|EH 20 vs EHE 12 modules)"
+ },
+ {
+  "id": 178,
+  "question": "How often do classes meet for the Executive Master in Digital Health and AI program?",
+  "reason": "duplicate of 177"
+ },
+ {
+  "id": 185,
+  "question": "How long does the full-time Cyber Security master's program at MedTech take to complete?",
+  "reason": "duplicate of 169 (2026 catalogue)"
+ },
+ {
+  "id": 187,
+  "question": "How often do classes meet for the Executive Master in BIM & ERP Management program?",
+  "reason": "duplicate of 132 (2026 catalogue)"
+ },
+ {
+  "id": 189,
+  "question": "How often do classes meet for the Executive Master's in Digital Health and AI program?",
+  "reason": "duplicate of 177 (2026 catalogue)"
+ },
+ {
+  "id": 197,
+  "question": "How many modules are included in the Network Defense Essentials course curriculum?",
+  "reason": "duplicate of 196"
+ },
+ {
+  "id": 198,
+  "question": "Are there any prerequisites to enroll in the network security program?",
+  "reason": "ambiguous: 'the network security program' (CND vs Network Defense Essentials)"
+ },
+ {
+  "id": 147,
+  "question": "When does the Executive Master in BIM & ERP Management program start?",
+  "reason": "kept, gold answer fixed: generator wrote '8th August', the flyer says '31st August'"
+ },
+ {
+  "id": 181,
+  "reason": "removed after the first eval run: the catalogue's course table is flattened by pypdf: courses of the 3 engineering programs are interleaved, so the gold answer (and any answer) cannot be checked"
+ },
+ {
+  "id": 176,
+  "reason": "gold fixed after the first eval run: the brochure also says basic networking/OS/coding knowledge is expected; the bot was right"
+ },
+ {
+  "id": 171,
+  "reason": "gold fixed after the first eval run: the brochure says 12 hours total, 4 hours per week; the bot was right"
+ }
+]

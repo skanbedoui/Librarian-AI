@@ -1,0 +1,26 @@
+[
+  {
+    "chunk_words": 100,
+    "overlap": 20,
+    "n_chunks": 229,
+    "vector_r@5": 0.9629629629629629,
+    "hybrid_r@1": 0.6481481481481481,
+    "hybrid_r@5": 1.0
+  },
+  {
+    "chunk_words": 200,
+    "overlap": 40,
+    "n_chunks": 129,
+    "vector_r@5": 0.9629629629629629,
+    "hybrid_r@1": 0.7962962962962963,
+    "hybrid_r@5": 1.0
+  },
+  {
+    "chunk_words": 400,
+    "overlap": 80,
+    "n_chunks": 72,
+    "vector_r@5": 0.9537037037037037,
+    "hybrid_r@1": 0.8703703703703703,
+    "hybrid_r@5": 1.0
+  }
+]

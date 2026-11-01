@@ -1,0 +1,47 @@
+[
+  {
+    "step": "0. baseline",
+    "accuracy_overall": 0.9918032786885246,
+    "latency_p50_s": 3.2540670500020497,
+    "latency_p95_s": 4.484013265039538,
+    "cost_per_request_usd": 0.0006701096721311475,
+    "cost_per_request_list_usd": 0.0009742145901639345,
+    "rerank_rate": 1.0
+  },
+  {
+    "step": "1. + gpt-4o-mini for answers",
+    "accuracy_overall": 0.9918032786885246,
+    "latency_p50_s": 3.5361187999951653,
+    "latency_p95_s": 4.74062120495364,
+    "cost_per_request_usd": 0.0004314331147540983,
+    "cost_per_request_list_usd": 0.000595970819672131,
+    "rerank_rate": 1.0
+  },
+  {
+    "step": "2. + 3 chunks instead of 5",
+    "accuracy_overall": 0.9836065573770492,
+    "latency_p50_s": 3.256559949950315,
+    "latency_p95_s": 4.515721745014888,
+    "cost_per_request_usd": 0.00036551631147540984,
+    "cost_per_request_list_usd": 0.0005266704098360655,
+    "rerank_rate": 1.0
+  },
+  {
+    "step": "3. + no query rewrite",
+    "accuracy_overall": 0.9918032786885246,
+    "latency_p50_s": 2.4758320500259288,
+    "latency_p95_s": 3.717663719929987,
+    "cost_per_request_usd": 0.00045927786885245896,
+    "cost_per_request_list_usd": 0.0005097172131147541,
+    "rerank_rate": 1.0
+  },
+  {
+    "step": "4. + skip reranker when confident",
+    "accuracy_overall": 0.9918032786885246,
+    "latency_p50_s": 1.9569039499619976,
+    "latency_p95_s": 3.374191569979302,
+    "cost_per_request_usd": 0.00025370655737704916,
+    "cost_per_request_list_usd": 0.0003489196721311475,
+    "rerank_rate": 0.5409836065573771
+  }
+]

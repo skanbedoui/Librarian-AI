@@ -5,18 +5,17 @@ Run:  streamlit run app.py
 """
 import json
 import time
-from dataclasses import replace
 
 import pandas as pd
 import streamlit as st
 
-from rag.config import BASELINE, OPTIMISED, DATA_DIR, RESULTS_DIR, DOCUMENTS
+from rag.config import OPTIMISED, DATA_DIR, RESULTS_DIR, list_documents
 from rag.pipeline import Librarian
 
 st.set_page_config(page_title="The Librarian - MedTech", page_icon="📚", layout="wide")
 
 
-@st.cache_resource(show_spinner="Loading the index...")
+@st.cache_resource(show_spinner="Loading the documents (first start after adding a PDF takes ~10 s)...")
 def get_librarian():
     # Loaded once and shared by every user (so the answer cache is shared too).
     return Librarian()
@@ -31,35 +30,26 @@ def save_feedback(entry: dict):
 # ---------------------------------------------------------------- sidebar
 with st.sidebar:
     st.title("📚 The Librarian")
-    st.caption("Ask anything about the MedTech 2026-2027 student guides. "
-               "Every answer cites the page it came from.")
+    st.caption("Ask anything about MedTech: rules, exams, grades, programs, masters, "
+               "certifications... Every answer cites the document and page it came from.")
 
-    program = st.radio("Which program are you in?",
-                       ["all", "engineering", "licence_master"],
-                       format_func={"all": "Both guides", "engineering": "Pre-Engineering / Engineering",
-                                    "licence_master": "Licence / Master"}.get)
+    # The app always searches ALL documents with the optimised pipeline (no choices to make).
+    settings = OPTIMISED
 
-    preset = st.radio("Pipeline version", ["Optimised (Week 8)", "Baseline (Week 7)", "Custom"],
-                      help="Optimised is cheaper and faster. Baseline is the first working version.")
-    settings = OPTIMISED if preset.startswith("Optimised") else BASELINE
-    if preset == "Custom":
-        settings = replace(
-            BASELINE,
-            search_mode=st.selectbox("Search mode", ["hybrid+rerank", "hybrid", "vector", "keyword"]),
-            n_context=st.slider("Chunks sent to the LLM", 1, 10, 5),
-            gen_model=st.selectbox("Answer model", ["gpt-4.1-mini", "gpt-4o-mini"]),
-            rewrite_query=st.checkbox("Rewrite the question first", True),
-            skip_rerank_if_confident=st.checkbox("Skip reranker when search is confident", False),
-            use_cache=st.checkbox("Cache repeated questions", False),
-        )
+    docs = list_documents()
+    with st.expander(f"📂 {len(docs)} documents searched"):
+        for _, title in docs:
+            st.markdown(f"- {title}")
+        st.caption("To add one: put the PDF in docs/ and restart the app.")
+
     show_details = st.toggle("Show what happens behind the scenes", value=True)
 
     st.divider()
     st.markdown("**Try:**")
-    examples = ["What CGPA puts me on academic probation?",
-                "Can I retake a course I failed?",
-                "What happens if I miss an exam?",
+    examples = ["What happens if I miss an exam?",
                 "How do I get on the Dean's List?",
+                "What does the Certified Ethical Hacker program cover?",
+                "Who is the Executive Master in Digital Health and AI for?",
                 "What is the cafeteria menu?"]
     for ex in examples:
         if st.button(ex, use_container_width=True):
@@ -120,68 +110,68 @@ with tab_chat:
         with st.chat_message("assistant", avatar="📚"):
             render_answer(r, str(i))
 
-    question = st.chat_input("Ask a question about the student guides...")
+    question = st.chat_input("Ask a question about MedTech...")
     question = question or st.session_state.pop("pending", None)
     if question:
         with st.chat_message("user"):
             st.markdown(question)
         with st.chat_message("assistant", avatar="📚"):
-            with st.spinner("Searching the guides..."):
-                result = get_librarian().ask(question, settings, program)
+            with st.spinner("Searching the documents..."):
+                result = get_librarian().ask(question, settings)
             render_answer(result, str(len(st.session_state.history)))
         st.session_state.history.append((question, result))
 
 # ---------------------------------------------------------------- how it works tab
 with tab_how:
     st.header("How The Librarian answers a question")
-    st.markdown("""
+    st.markdown(f"""
 This is a **RAG** system (*Retrieval-Augmented Generation*): instead of trusting what the
-language model remembers, we first **find** the relevant pages in the student guides, then
-ask the model to **answer only from those pages** and cite them.
+language model remembers, we first **find** the relevant pages in MedTech's
+{len(list_documents())} documents, then ask the model to **answer only from those pages** and cite them.
 """)
     st.graphviz_chart("""
 digraph {
   rankdir=LR; node [shape=box, style="rounded,filled", fillcolor="#eef3ff", fontname="Helvetica"];
-  subgraph cluster_off { label="Offline (once)"; style=dashed;
-    pdf [label="2 PDF guides"]; chunk [label="Chunk\\n200 words, 40 overlap"];
-    emb [label="Embed\\ntext-embedding-3-small"]; store [label="Flat file index\\n+ BM25"];
+  subgraph cluster_off { label="Offline (automatic when docs/ changes)"; style=dashed;
+    pdf [label="PDFs in docs/"]; chunk [label="Chunk\n200 words, 40 overlap"];
+    emb [label="Embed\ntext-embedding-3-small"]; store [label="Flat file index\n+ BM25"];
     pdf -> chunk -> emb -> store; }
-  q [label="Question", fillcolor="#fff4d6"]; rw [label="1. Rewrite"];
-  ret [label="2. Hybrid search\\nBM25 + vectors (RRF)"]; rr [label="3. Rerank\\nsmall LLM scores 0-10"];
-  gen [label="4. Generate\\nwith [n] citations"]; idk [label="5. I don't know", fillcolor="#ffe0e0"];
+  q [label="Question", fillcolor="#fff4d6"]; cache [label="Asked before?\n(cache)"];
+  ret [label="1. Hybrid search\nBM25 + vectors (RRF)"]; rr [label="2. Rerank\nsmall LLM scores 0-10"];
+  gen [label="3. Generate\nwith [n] citations"]; idk [label="4. I don't know", fillcolor="#ffe0e0"];
   a [label="Answer + sources", fillcolor="#e0ffe4"];
-  q -> rw -> ret -> rr -> gen -> a; rr -> idk [label="best score < 3", style=dashed]; store -> ret;
+  q -> cache -> ret -> rr -> gen -> a; cache -> a [label="yes: instant, $0", style=dashed];
+  ret -> gen [label="both searches agree:\nskip rerank", style=dashed];
+  rr -> idk [label="best score < 3", style=dashed]; store -> ret;
 }""")
     st.subheader("The steps, in plain words")
     st.markdown("""
 | Step | What it does | Why |
 |---|---|---|
-| **Chunking** | Cut each PDF page into ~200-word pieces that overlap by 40 words. Each piece keeps its document, page and section title. | The model can't read 65 pages per question; small pieces are cheaper and more precise. The metadata gives us citations. |
+| **Chunking** | Cut each PDF page into ~200-word pieces that overlap by 40 words. Each piece keeps its document, page and section title. | The model can't read every document for every question; small pieces are cheaper and more precise. The metadata gives us citations. |
 | **Embedding** | Turn every chunk into a vector (a list of 1536 numbers) that captures its *meaning*. | Lets us find "retake a failed class" even when the guide says "Retaking Courses". |
-| **Keyword index (BM25)** | Classic search-engine scoring on exact words. | Great for exact terms: *CGPA*, *Dean's List*, *EQUALITY scholarship*. |
-| **1. Rewrite** | A small LLM rewrites short/vague questions into a clear search query. | "probation?" → "What CGPA puts a student on academic probation?" |
-| **2. Hybrid search** | Run both searches and merge them with *Reciprocal Rank Fusion*: each chunk gets `1/(60+rank)` from each list. | Each search catches what the other misses. RRF only uses ranks, so we never compare apples (BM25) to oranges (cosine). |
-| **Metadata filter** | If you pick your program in the sidebar, only that guide is searched. | The two guides have different rules for some topics. |
-| **3. Rerank** | A small LLM reads the question with each of the top 10 chunks and scores relevance 0–10. | Reading question and passage *together* is more accurate than comparing two vectors. |
-| **4. Generate** | The answer model sees only the top chunks, numbered [1], [2]... and must cite one after every fact. | Every claim can be checked against its page. |
-| **5. I don't know** | If the best rerank score is below 3, or the model finds no answer in the sources, it says so. | A wrong answer about exam rules is worse than no answer. |
+| **Keyword index (BM25)** | Classic search-engine scoring on exact words. | Great for exact terms: *CGPA*, *Dean's List*, *CHFI*, *BIM*. |
+| **Cache** | If the exact same question was asked before, reuse that answer. | Popular questions cost nothing and come back instantly. |
+| **1. Hybrid search** | Run both searches and merge them with *Reciprocal Rank Fusion*: each chunk gets `1/(60+rank)` from each list. | Each search catches what the other misses. RRF only uses ranks, so we never compare apples (BM25) to oranges (cosine). |
+| **2. Rerank** | A small LLM reads the question with each of the top 10 chunks and scores relevance 0–10. **Skipped** when keyword and vector search already agree on the best chunk (about half the time). | Reading question and passage *together* is more accurate, but it costs time, so we only do it when the search is unsure. |
+| **3. Generate** | `gpt-4o-mini` sees only the top 3 chunks, numbered [1], [2], [3], and must cite one after every fact. | Every claim can be checked against its page. |
+| **4. I don't know** | If the best rerank score is below 3, or the model finds no answer in the sources, it says so. | A wrong answer about exam rules is worse than no answer. |
 """)
-    st.subheader("Baseline vs Optimised")
+    st.subheader("How we made it cheap and fast")
     st.markdown("""
-| | Baseline (Week 7) | Optimised (Week 8) |
-|---|---|---|
-| Rewrite question | yes | **no** (one LLM call saved) |
-| Reranker | always | **skipped when keyword & vector search agree** on the top chunk |
-| Chunks sent to the LLM | 5 | **3** |
-| Answer model | gpt-4.1-mini | **gpt-4o-mini** (≈2.7× cheaper) |
-| Answer cache | no | **yes** — a repeated question costs $0 and returns instantly |
+Our first version rewrote every question with an LLM, always reranked, sent 5 chunks and used a
+bigger answer model. Measuring each change on the same test set showed we could drop all of
+that **without losing accuracy**: about **3× cheaper** and **2× faster** (details in the Evaluation tab).
 """)
 
 # ---------------------------------------------------------------- evaluation tab
 with tab_eval:
     st.header("How good is it? (measured, not guessed)")
-    st.caption("All numbers come from the scripts in `eval/` run on `data/eval_questions.json` "
-               "(108 answerable questions with their source passage + 14 the guides can't answer).")
+    qs = json.loads((DATA_DIR / "eval_questions.json").read_text(encoding="utf-8"))
+    n_ans = sum(q["answerable"] for q in qs)
+    st.caption(f"All numbers come from the scripts in `eval/` run on `data/eval_questions.json` "
+               f"({n_ans} answerable questions with their source passage + {len(qs) - n_ans} "
+               f"the documents can't answer). *Baseline* = our first version, *optimised* = what the app runs.")
 
     def load(name):
         p = RESULTS_DIR / name
@@ -229,7 +219,7 @@ with tab_eval:
                    "discount (which varies run to run). *Billed* includes the discount.")
         steps = load("optimisation_steps.json")
         if steps:
-            st.markdown("**What each Week 8 change did** (applied one after the other):")
+            st.markdown("**What each optimisation did** (applied one after the other):")
             st.dataframe(pd.DataFrame(steps), hide_index=True, use_container_width=True)
         with st.expander("See every question and answer (optimised)"):
             st.dataframe(pd.DataFrame(gens["optimised"]["rows"])[

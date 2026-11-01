@@ -1270,5 +1270,595 @@
   "page": 32,
   "passage": "life. Elections are held usually on the first two weeks of classes. The Class Representative acts as the main contact between students and the MedTech Administration and holds a seat on some committees. b. Clubs Several clubs are active on the MedTech-MSB Campus. For up-to-date information on student activities, please consult the Student Clubs Council or visit the webpage http://www.medtech.tn/student-life/student-clubs/",
   "id": 121
+ },
+ {
+  "question": "How many professionals and experts attended BIM Day Tunisia 2025?",
+  "answer": "over 200",
+  "answerable": true,
+  "source_chunk_id": "bim_day_tunisia_2025-p2-0",
+  "file": "bim_day_tunisia_2025.pdf",
+  "page": 2,
+  "passage": "Welcome & Introduction On May 28, 2025, the South Mediterranean University (MedTech), in collaboration with BIM Africa, proudly hosted BIM Day Tunisia 2025—a high-level, multidisciplinary forum dedicated to accelerating the adoption of Building Information Modeling (BIM) in Tunisia and across the African continent. The event convened over 200 professionals, academics, public officials, and industry leaders, creating a dynamic platform for critical reflection, strategic dialogue, and collaborative engagement around the digital transformation of the construction and built environment sectors. Supported by Archetype Group and our Platinum Sponsor ST2I – Autodesk Gold Partner, the conference emphasized the transformative role of digital technologies in enhancing construction efficiency, sustainability, and governance. BIM Day Tunisia 2025 marked a significant milestone in national and regional efforts to advance a more structured and holistic approach to digital construction practices. The event’s partnership with BIM Africa, a leading continental network promoting BIM knowledge and capacity building, amplified the scope of the discussions, offering comparative insights from various African contexts and fostering regional cooperation. This collaboration reaffirmed Tunisia’s strategic commitment to align with broader African digitalization agendas and to contribute meaningfully to the collective advancement of BIM across the continent. Objectives of BIM Day Tunisia 2025 The primary objectives",
+  "id": 122
+ },
+ {
+  "question": "What were the main objectives of BIM Day Tunisia 2025?",
+  "answer": "Raise awareness of BIM, showcase best practices, identify challenges, promote collaboration, support education, strengthen regional cooperation, and chart a national BIM roadmap",
+  "answerable": true,
+  "source_chunk_id": "bim_day_tunisia_2025-p2-1",
+  "file": "bim_day_tunisia_2025.pdf",
+  "page": 2,
+  "passage": "contexts and fostering regional cooperation. This collaboration reaffirmed Tunisia’s strategic commitment to align with broader African digitalization agendas and to contribute meaningfully to the collective advancement of BIM across the continent. Objectives of BIM Day Tunisia 2025 The primary objectives of BIM Day Tunisia 2025 were to: Raise national and regional awareness of BIM as a process-driven methodology that extends beyond software to include standards, workflows, policy frameworks, and organizational transformation. Showcase international and African best practices, providing actionable insights that can inform the development of a national BIM strategy tailored to Tunisia’s socio-economic and institutional context. Identify structural and operational challenges hindering BIM adoption in Tunisia, including gaps in regulation, skills development, inter-agency coordination, and access to digital infrastructure. Promote cross-sectoral collaboration by fostering dialogue between academia, public institutions, and private industry to ensure cohesive and coordinated BIM implementation. Support education and capacity building by advocating for the integration of BIM competencies in academic curricula and the development of certification programs for professionals and public-sector stakeholders. Strengthen regional cooperation by engaging with BIM Africa and other continental partners to harmonize digital construction standards and promote knowledge transfer across borders. Chart a national roadmap for BIM integration in Tunisia’s construction",
+  "id": 123
+ },
+ {
+  "question": "What are some goals of BIM Day Tunisia 2025 for the construction sector?",
+  "answer": "Certification programs, regional cooperation, national roadmap with milestones",
+  "answerable": true,
+  "source_chunk_id": "bim_day_tunisia_2025-p2-2",
+  "file": "bim_day_tunisia_2025.pdf",
+  "page": 2,
+  "passage": "certification programs for professionals and public-sector stakeholders. Strengthen regional cooperation by engaging with BIM Africa and other continental partners to harmonize digital construction standards and promote knowledge transfer across borders. Chart a national roadmap for BIM integration in Tunisia’s construction sector, with clearly defined milestones, governance mechanisms, and performance indicators. Through these objectives, BIM Day Tunisia 2025 aimed not only to catalyze the digital transformation of Tunisia’s construction ecosystem but also to contribute to a broader continental vision of a collaborative, data-driven, and future-ready built environment.",
+  "id": 124
+ },
+ {
+  "question": "What percentage of BIM penetration is there in Tunisia's construction sector?",
+  "answer": "3%",
+  "answerable": true,
+  "source_chunk_id": "bim_day_tunisia_2025-p3-0",
+  "file": "bim_day_tunisia_2025.pdf",
+  "page": 3,
+  "passage": "Section 1: BIM in Tunisia Dr. Bilel Succar – Introduction to BIM Dr. Succar emphasized that BIM is a holistic methodology encompassing processes, workflows, and policies, not merely software. He identified three essential drivers: • A strong mandate or champion at leadership level • Initial budget allocation and ROI patience • A long-term strategic vision He reviewed global best practices: UK's Level 2 mandate, Singapore’s incentives, and Nordic open standards. Tunisia must tailor a national roadmap by integrating these lessons with local context. Anis Mahmoud – National Digitalization Report Anis Mahmoud presented insights from the Arab Institute of Business Leaders report, showing only 3% BIM penetration in Tunisia's construc- tion sector despite high opportunity recognition. Sami Chebbi – Private-Sector Deployment Mr. Chebbi showcased prefabricated hospital and housing initiatives using BIM-led workflows. Key benefits included early clash detection, reduced rework, and faster permit approvals. He highlighted challenges in software affordability and proposed negotiations with vendors for site licenses and local value creation. Mrs. Sofia Rihane & Mrs. Houda Zeidi representing Tunisia’s Housing Land Agency Mrs. Sofia Rihane, representing Tunisia’s Housing Land Agency, discussed the public-sector requirements for BIM in land development and housing projects. She highlighted: • The need for standardized",
+  "id": 125
+ },
+ {
+  "question": "What budget is recommended for establishing a central BIM authority in Tunisia?",
+  "answer": "20 million TND over 5 years",
+  "answerable": true,
+  "source_chunk_id": "bim_day_tunisia_2025-p3-1",
+  "file": "bim_day_tunisia_2025.pdf",
+  "page": 3,
+  "passage": "creation. Mrs. Sofia Rihane & Mrs. Houda Zeidi representing Tunisia’s Housing Land Agency Mrs. Sofia Rihane, representing Tunisia’s Housing Land Agency, discussed the public-sector requirements for BIM in land development and housing projects. She highlighted: • The need for standardized digital deliverables in public tenders • Data interoperability for integrating GIS and BIM workflows • Capacity building within municipal agencies to review and approve BIM submissions Her insights underscored the importance of harmonizing agency mandates with national BIM strategies. He recommended: • Establishing a central BIM authority with a 20 M TND budget over 5 years • Launching ‘Plan BIM Tunisie 2025’ as a shared repository for standards and tools • Coordinated public–private working groups to drive policy and pilot projects",
+  "id": 126
+ },
+ {
+  "question": "What did Dr. Ons Mansour Najjar suggest to improve BIM adoption in education?",
+  "answer": "Integrate BIM modules into architecture and engineering curricula",
+  "answerable": true,
+  "source_chunk_id": "bim_day_tunisia_2025-p4-0",
+  "file": "bim_day_tunisia_2025.pdf",
+  "page": 4,
+  "passage": "Dr. Ons Mansour Najjar Architect - Academic - BIM Consultant Continental Insights African BIM leaders showcased regional initiatives, highlighting diverse approaches adapted to local contexts while addressing shared challenges such as pressing infrastructure demands, skills shortages, and fragmented regulatory frameworks. Key presentations underscored efforts to promote BIM adoption through localized training programs, public-private partnerships, and policy advocacy to standardize digital construction practices. Some nations are leveraging BIM to enhance large-scale infrastructure projects, while others focus on capacity-building to bridge the technical skills gap. Despite varying maturity levels in BIM implementation, a common theme emerged: the need for collaborative strategies that align education, industry needs, and govern- ment support to drive sustainable digital transformation. These discussions reinforced the impor- tance of context-specific to accelerate BIM integration across the continent. Prof. Jamel Neji – Academic & Research Roles Dr. Najjar emphasized the persistent \"awareness-im- plementation gap\" in Building Information Modeling (BIM), where it is still predominantly perceived as a mere technical tool rather than a comprehensive process driving digital transformation in construction. She advocated for the systematic integration of BIM modules into architecture and engineering curricula, ensuring that future professionals develop the neces- sary competencies early in their academic training. Additionally, she",
+  "id": 127
+ },
+ {
+  "question": "What did Prof. Neji propose to enhance BIM research and application in Tunisia?",
+  "answer": "Creating a national Center of Excellence for BIM research with joint university–industry pilot programs and embedding certification in public-sector hiring",
+  "answerable": true,
+  "source_chunk_id": "bim_day_tunisia_2025-p4-1",
+  "file": "bim_day_tunisia_2025.pdf",
+  "page": 4,
+  "passage": "rather than a comprehensive process driving digital transformation in construction. She advocated for the systematic integration of BIM modules into architecture and engineering curricula, ensuring that future professionals develop the neces- sary competencies early in their academic training. Additionally, she called for the strengthening of practi- tioner certification programs to promote a deeper, Prof. Neji advocated creating a national Center of Excellence for BIM research, offering joint universi- ty–industry pilot programs and embedding certifica- tion in public-sector hiring. more consistent application of BIM across project lifecycles. This dual approach would facilitate a paradigm shift, enabling BIM to be leveraged not just as a standalone tool but as a foundational element of collaborative, data-driven, and sustainable project delivery. Dr. Najjar’s recommenda- tions aim to foster a more holistic adoption of BIM, maximizing its potential to enhance efficiency, innovation, and interdisciplinary coordination in the built environment. A strong partnership between academia and industry is essential to bridge the BIM skills gap, ensuring that education- al curricula align with real-world demands while empowering professionals with the latest digital competencies for transformative project delivery. Section 2: BIM in Africa",
+  "id": 128
+ },
+ {
+  "question": "How many public-sector engineers have completed the BIM training courses mentioned in the report?",
+  "answer": "over 120",
+  "answerable": true,
+  "source_chunk_id": "bim_day_tunisia_2025-p5-1",
+  "file": "bim_day_tunisia_2025.pdf",
+  "page": 5,
+  "passage": "offer certification courses and hands-on CDE (Common Data Environment) workshops, noting that over 120 public-sector engineers have already completed training. Nebib also highlighted a pilot “Smart Infrastructure” project in Tangier, where a full digital-twin workflow was deployed to manage seawall reinforce- ment, resulting in a 28 percent reduction in site rework. He closed by inviting neighboring coun- tries to adopt Morocco’s openBIM guidelines and to participate in the Maghreb BIM Forum scheduled for September in Casablanca, aimed at harmonizing standards across North Africa. Kehinde Adeyemi (Nigeria) Detailed the government-led 'Digital Construction Academy' initiative, which offers subsidized BIM training modules to over 1,000 students annual- ly. The program partners with global software vendors and local universities to fast-track graduates into public-sector infrastructure projects. Uboho Othman(West Africa) Described grassroots practitioner networks that have aligned with Building- Smart International to deliver Level 2 BIM certification workshops. These networks leverage online platforms and local hubs in Ghana and Senegal to upskill 200+ professionals in the past year. Mahmoud Adly (Egypt) Shared mega-project case studies, including the Golden Gate Elevated Highway and Cairo Arts & Culture Complex. He highlighted cross-border collaboration between Egyptian and Emirati firms using IFC-based work- flows, resulting in a 20% faster",
+  "id": 130
+ },
+ {
+  "question": "What trial offer was given to Tunisian attendees at BIM Day Tunisia 2025?",
+  "answer": "A six-month trial of Autodesk Forma and Build",
+  "answerable": true,
+  "source_chunk_id": "bim_day_tunisia_2025-p6-0",
+  "file": "bim_day_tunisia_2025.pdf",
+  "page": 6,
+  "passage": "Section 3: Panel Discussion – Shaping the Roadmap The roundtable convened policymakers, industry leaders, and academics to chart Tunisia’s BIM roadmap. Discussions centered on regulatory frameworks, data governance, diversity, and capacity building. Highlights included: ST2I Autodesk (Platinum Sponsor) ST2I Autodesk showcased its comprehensive cloud-based BIM platform, emphasizing three main capabilities: 1. E-Permitting in Dubai: Enabled digital submission of 3D models for permitting, cutting approval times by 50%. 2. Digital Twins in Johor: Demonstrated real-time asset management via integrated BIM and IoT data for urban development projects. 3. Trial Offer: Tunisian attendees received a six-month trial of Autodesk Forma and Build, facilitating hands-on experience with advanced collaborative workflows. David Delgado (Spain) Proposed a template for BIM mandates in public tenders, including tiered requirements based on project size and value. He recommended embed- ding BIM clauses in standard contract documents and offering govern- ment-backed training grants. Dahbia Meddahi (Algeria) Addressed data governance, advocating for a centralized CDE with role-based access controls to ensure data privacy and compliance with international standards. She stressed the need for legislative support to govern digital project data. Faten Hussein (Tunisia) Highlighted the importance of diversity and gender inclusion in digital construction. She proposed mentorship programs, scholarships, and",
+  "id": 131
+ },
+ {
+  "question": "How often do classes meet for the Executive Master in BIM & ERP Management program?",
+  "answer": "Four days a month (Thursday through Sunday)",
+  "answerable": true,
+  "source_chunk_id": "bim_erp_executive_master_catalogue_2023-p6-0",
+  "file": "bim_erp_executive_master_catalogue_2023.pdf",
+  "page": 6,
+  "passage": "BIM & ERP Management The Building Information Modeling (BIM) and Enterprise Resource Planning (ERP) methodologies have revolutionized the Architecture, Engineering, Construction, and Operation (AECO) industry. Yet there is a shortage of highly qualified practitioners to manage BIM projects. The Executive Master in BIM & ERP Management allows participants to acquire a high level of know-how in the management of processes, equipment, and workflows involved in the construction sector, throughout the entire lifecycle of a building project, from the planning and design phase, to procurement, construction and maintenance stage. The objective of the program is to train professionals from the AECO industry, and equip them with the necessary tools and competencies for management roles in BIM projects. The program consists of modules and workshops aiming at : The Executive Master in BIM & ERP Management is a part-time program, designed to tailor the work and life commitments of participants. Classes meet four days a month (Thursday through Sunday from 9:00 AM to 6:00 PM) over a 17-month period, followed by three additional months dedicated to the final project. Providing the knowledge and skills of how BIM and ERP methodologies can be applied across a construction/ infrastructure project from conception to demolition.",
+  "id": 132
+ },
+ {
+  "question": "How long does the Executive Master in BIM & ERP Management program last?",
+  "answer": "20 months",
+  "answerable": true,
+  "source_chunk_id": "bim_erp_executive_master_catalogue_2023-p6-1",
+  "file": "bim_erp_executive_master_catalogue_2023.pdf",
+  "page": 6,
+  "passage": "to 6:00 PM) over a 17-month period, followed by three additional months dedicated to the final project. Providing the knowledge and skills of how BIM and ERP methodologies can be applied across a construction/ infrastructure project from conception to demolition. Developing critical thinking, leadership, and decision- making skills, and the ability to apprehend strategic decisions dealing with both the technical administration and the execution of a project. Developing communication and collaboration skills. The Program The Format The Executive Master in BIM & ERP Management at a glance",
+  "id": 133
+ },
+ {
+  "question": "Who is the Executive Master in BIM & ERP Management program designed for?",
+  "answer": "Experienced professionals from the AECO industry such as architects, engineers, technicians, sub/contractors, manufacturers, and facilities and operations managers",
+  "answerable": true,
+  "source_chunk_id": "bim_erp_executive_master_catalogue_2023-p8-0",
+  "file": "bim_erp_executive_master_catalogue_2023.pdf",
+  "page": 8,
+  "passage": "BIM & ERP Management The program is aimed at experienced professionals from the AECO industry who are expected to manage BIM projects, including: architects, engineers, technicians, sub/contractors, manufacturers, and facilities and operations managers. Good English proficiency is required to enroll in the program. Applicants are interviewed to assess their motivation, potential and capacity to benefit from the program. Each class is composed of highly diversified participants (activity sector, age, gender, nationality, and educational background) to offer a unique learning experience and opportunities for networking. Participant profiles 1. 2. 3.",
+  "id": 135
+ },
+ {
+  "question": "What software tool is used for authoring BIM models in the Executive Master in BIM & ERP Management?",
+  "answer": "Autodesk REVIT",
+  "answerable": true,
+  "source_chunk_id": "bim_erp_executive_master_catalogue_2023-p10-0",
+  "file": "bim_erp_executive_master_catalogue_2023.pdf",
+  "page": 10,
+  "passage": "BIM & ERP Management BIM FUNDAMENTALS AND INFORMATION MANAGEMENT Introduces participants to the basic concepts of BIM and the different information requirements based on the application of protocols and standards for control, feedback and analysis. These standards and protocols are developed at organizational, sector and project level and represent what stakeholders aim to achieve in the BIM project. OPENBIM AND COLLABORATION PRACTICE Introduces the Open BIM environment and the main steps of a full BIM workflow. Participants learn how to model, manage documentation and information inside the model, exchange BIM data between different software tools using open data standards, and recognize the importance of collaborative working between different disciplines. AUTHORING IN DESIGN WITH AUTODESK REVIT Provides a training for the design and integrated management of BIM models using Autodesk REVIT as an authoring modeling tool for architecture, structures, and mechanical electrical plumbing (MEP). COORDINATION, COMMUNICATION & INTEROPERABILITY Covers methodologies related to interoperability and the best practices for coordination and cloud- based communication within a BIM environment. It follows a working methodology based on learning- by-doing through practical case studies, teamwork assignments, and a real project to be carried out at the end of the training. PROJECT MANAGEMENT Provides a comprehensive",
+  "id": 136
+ },
+ {
+  "question": "What project management methods are covered in the Executive Master in BIM & ERP Management program?",
+  "answer": "Agile, Scrum, Critical Chain, and Change Management",
+  "answerable": true,
+  "source_chunk_id": "bim_erp_executive_master_catalogue_2023-p10-1",
+  "file": "bim_erp_executive_master_catalogue_2023.pdf",
+  "page": 10,
+  "passage": "based communication within a BIM environment. It follows a working methodology based on learning- by-doing through practical case studies, teamwork assignments, and a real project to be carried out at the end of the training. PROJECT MANAGEMENT Provides a comprehensive view of Lean principles and tools, and how they can be applied to Project Management. The course includes Agile, Scrum, Critical Chain and Change Management methods, among other concepts, structured into sessions that are focused on a specific theme or methodology, using exercises, real-life case studies and simulations. DIGITAL LITERACY Enables participants to become more comfortable with digital tools and simple quantitative methods depending on their needs. Topics covered include data structure, digital workspaces, libraries and research tools, times series, variability, correlation, and simple and multiple regression models. The emphasis throughout the course is on concepts and reasoning, rather than technical details. Outline of the program Term",
+  "id": 137
+ },
+ {
+  "question": "What software is used for modeling and extracting bills of quantities in the preconstruction and handover phase?",
+  "answer": "REVIT",
+  "answerable": true,
+  "source_chunk_id": "bim_erp_executive_master_catalogue_2023-p11-0",
+  "file": "bim_erp_executive_master_catalogue_2023.pdf",
+  "page": 11,
+  "passage": "BIM & ERP Management CORPORATE COMMUNICATION Develops participants’ abilities in writing and presenting technical communication in a clear and professional manner. Likewise, participants will develop their ability to comprehend relevant technical communication, written and oral, within their fields. INFORMATION EXCHANGES THROUGH IFC Highlights how the exchange of BIM content between different software programs is enabled with Industry Foundation Classes (IFC)-based model files, allowing for a better collaboration between different teams working on a BIM project throughout the entire project’s lifecycle. PRECONSTRUCTION, HANDOVER & 4D/5D STRATEGIES Present the different aspects of preconstruction and handover using REVIT, including modeling, extraction of bills of quantities (BOQ), commissioning using BIM objects ID, delivery of as built model, and comparison of as built model with executed works. Emphasis is also placed on how to explore the pre-constructed models for interface management, extraction of quantities (5D), and planning management (4D) and synchronization. PROJECTS TAKEOFF, PLANNING & BUDGET CONTROL Provides participants with a foundational understanding of the importance of the 4D and 5D in the Construction Industry. Participants learn the process of preparing a strategic plan for the project, including creating a design, securing permits or entitlements, and gathering the labor and resources required for construction. BIM",
+  "id": 138
+ },
+ {
+  "question": "What software tools are introduced for generative and parametric design in the Executive Master in BIM & ERP Management program?",
+  "answer": "DYNAMO & GRASSHOPER",
+  "answerable": true,
+  "source_chunk_id": "bim_erp_executive_master_catalogue_2023-p11-1",
+  "file": "bim_erp_executive_master_catalogue_2023.pdf",
+  "page": 11,
+  "passage": "importance of the 4D and 5D in the Construction Industry. Participants learn the process of preparing a strategic plan for the project, including creating a design, securing permits or entitlements, and gathering the labor and resources required for construction. BIM QUALITY MANAGEMENT Focuses on the effective use of the BIM Inspection Testing Plan and quality control workflow on a construction project across the project lifecycle. Topics include quality management processes, issue management, and clash detection. GENERATIVE & PARAMETRIC DESIGN Introduces the different aspects of Generative Design Using DYNAMO & GRASSHOPER, with a focus on parametric design, data extraction and classification from BIM model, workflow automation, and modelling of irregular shapes. Outline of the program Term",
+  "id": 139
+ },
+ {
+  "question": "What standard is introduced for exchanging data to support facility management in the BIM & ERP Management program?",
+  "answer": "COBie",
+  "answerable": true,
+  "source_chunk_id": "bim_erp_executive_master_catalogue_2023-p12-0",
+  "file": "bim_erp_executive_master_catalogue_2023.pdf",
+  "page": 12,
+  "passage": "BIM & ERP Management STANDARDS FOR ASSET MANAGEMENT Provides insights on how to manage the progressive information flows, using different open standards throughout the project life cycle, and highlights the best practice for the integration of BIM into asset management processes. COBIE EXCHANGE PROTOCOLS Introduces the Construction Operations Building Information Exchange, known as COBie, which is a developing standard for the exchange of data to support facility management by owners and operators. INTEGRATED BUSINESS PROCESSES Highlights how the AEC processes can be integrated to the business process within a centralized and unique database to create a single source of information throughout the entire project’s lifecycle, and provides a training on core business processes embedded in SAP S/4HANA. ETHICS & CORPORATE SOCIAL RESPONSIBILITY Covers the ethical and social issues related to the development and use of technology. It covers topics in ethical theory, and social, political, and legal considerations of modern technology systems and applications. INTEGRATED PROJECT DELIVERY Focuses on a project delivery approach that integrates people, systems, business structures and practices into a process that collaboratively harnesses the resources to optimize the project outcomes and make buildings more sustainable. BIM IMPLEMENTATION PLAN Explores the process for creating and managing information",
+  "id": 140
+ },
+ {
+  "question": "What does the BIM Implementation Plan cover in the Executive Master in BIM & ERP Management program?",
+  "answer": "The process for creating and managing information on a construction project across the project lifecycle, including the BIM Execution Plan (BEP) in different international contexts.",
+  "answerable": true,
+  "source_chunk_id": "bim_erp_executive_master_catalogue_2023-p12-1",
+  "file": "bim_erp_executive_master_catalogue_2023.pdf",
+  "page": 12,
+  "passage": "project delivery approach that integrates people, systems, business structures and practices into a process that collaboratively harnesses the resources to optimize the project outcomes and make buildings more sustainable. BIM IMPLEMENTATION PLAN Explores the process for creating and managing information on a construction project across the project lifecycle, including the BIM Execution Plan (BEP) in different international contexts. Outline of the program Term",
+  "id": 141
+ },
+ {
+  "question": "What is the approach used in the final project of the Executive Master in BIM & ERP Management program?",
+  "answer": "openBIM approach",
+  "answerable": true,
+  "source_chunk_id": "bim_erp_executive_master_catalogue_2023-p13-0",
+  "file": "bim_erp_executive_master_catalogue_2023.pdf",
+  "page": 13,
+  "passage": "BIM & ERP Management FINAL PROJECT The final project is a real project simulation-based module integrating courses included in the program to be developed using openBIM approach. This allows the participants to make use of all the knowledge gained throughout the program and enables them to work collaboratively, with a client-oriented approach using different technologies and standardized methodologies, globally used. Outline of the program Term",
+  "id": 142
+ },
+ {
+  "question": "Who is the Technical Coordinator and board member of buildingSMART Spain in the Executive Master in BIM & ERP Management?",
+  "answer": "David Delgado Vendrell",
+  "answerable": true,
+  "source_chunk_id": "bim_erp_executive_master_catalogue_2023-p14-0",
+  "file": "bim_erp_executive_master_catalogue_2023.pdf",
+  "page": 14,
+  "passage": "Faculty David Delgado Vendrell is architect, entrepreneur at DDV.cat and AECO consultant, specialized in openBIM and Agile frameworks. He is the Technical Coordinator and board member of buildingSMART Spain and an active member of the BIM User Group of Catalonia (GuBIMCat). He also collaborates with the “We Build the Future” Commission of ITEC in Catalonia, representing buildingSMART Spanish Chapter. He has co-authored the BIM classification system “GuBIMclass,” an initiative of GuBIMCat and Infraestructures de Catalunya. Prof. Dr. Zoubeir LAFHAJ is a Full Professor at Centrale Lille, France. He is holder of the “Construction 4.0” chair, an industrial research chair that deals with the challenges of odernizing the construction industry in France and Europe. Prof. Dr. Zoubeir LAFHAJ’s industrial research expertise focuses on (i) additive manufacturing (3D printing) for construction, industrialization and robotization of construction, (ii) applications of AI, blockchain and BIM in construction and finally (iii) value, productivity, quality, lean construction, logistics, and collaboration with all stakeholders in the construction industry. DAVID DELGADO VENDRELL PROF. DR. ZOUBEIR LAFHAJ DR. BILAL SUCCAR Dr. Bilal Succar is a strategic advisor and independent researcher focusing on digital performance assessment and improvement in the Built Environment. He is the director of ChangeAgents AEC (ChangeAgents.com.au),",
+  "id": 143
+ },
+ {
+  "question": "Who is the director of ChangeAgents AEC?",
+  "answer": "Dr. Bilal Succar",
+  "answerable": true,
+  "source_chunk_id": "bim_erp_executive_master_catalogue_2023-p14-1",
+  "file": "bim_erp_executive_master_catalogue_2023.pdf",
+  "page": 14,
+  "passage": "industry. DAVID DELGADO VENDRELL PROF. DR. ZOUBEIR LAFHAJ DR. BILAL SUCCAR Dr. Bilal Succar is a strategic advisor and independent researcher focusing on digital performance assessment and improvement in the Built Environment. He is the director of ChangeAgents AEC (ChangeAgents.com.au), a digital transformation consultancy operating out of Melbourne, Australia. Dr. Succar is the Founder of the not-for-profit BIMe Initiative (BIMexcellence.org), a community of 160+ researchers from 42 countries, and the Head Editor of the international BIM Dictionary (BIMdictionary. com) covering 27 languages (including Spanish). Bilal published highly cited academic journals, led prominent BIM education initiatives, and delivered keynote addresses and workshops across the world covering digital transformation and macro-BIM adoption. Dr. Succar’s stated mission is to encourage continuous performance improvement, international collaboration, and open knowledge sharing. DR. KARAMA JERIBI Dr. Karama Jeribi is an Assistant Professor at MedTech with over 10 years of experience teaching and researching in the field of Industrial Engineering. With a PhD in Optimization of Logistic Systems from Ecole Centrale de Lille, she is a certified Supply Chain expert and Green Belt Lean Six Sigma. Her expertise lies in continuous improvement, lean manufacturing, and management, supply chain and logistics. She has worked on numerous industrial projects",
+  "id": 144
+ },
+ {
+  "question": "Who is responsible for developing the strategy for the digital Building concept for sustainable design and management in the Executive Master in BIM & ERP Management?",
+  "answer": "Dr. Ons Najjar",
+  "answerable": true,
+  "source_chunk_id": "bim_erp_executive_master_catalogue_2023-p15-0",
+  "file": "bim_erp_executive_master_catalogue_2023.pdf",
+  "page": 15,
+  "passage": "Dr. Ons Najjar is an architect, urban designer, BIM manager and academic researcher, with an international experience as a lecturer in the Middle East and Tunisia. Her industrial and research expertise focuses on the importance of digitalization on architecture, encouraged by creativity, innovation and Green Concepts. She is also responsible for developing a strategy for the digital Building concept for sustainable design and management. Dr Néjib Chennoufi is associate professor of engineering at MedTech. He is dedicated to success with solid multi-disciplinary engineering background with proven managerial experience and abilities. Expert and certified in Agile methods and project management, he has led several teams and projects within a number of international fortune 500 companies for over 12 years. He has worked within the oil & gas context, developing analytical and numerical physics-based models and software solutions. Dr. Chennoufi has led successfully the efforts to obtain the ABET accreditation for the ongoing three engineering programs in MedTech. Dr. Aida Siala is an Architect, Doctor of architectural sciences, BIM consultant and experienced educator in teaching BIM. She’s qualified as Lecturer of the Nationals Schools of Architecture in France and Certified Autodesk Instructor and associated researcher at the MAP-CRIA laboratory. Her research work",
+  "id": 145
+ },
+ {
+  "question": "Who is the Director of the Language and Culture Institute at SMU?",
+  "answer": "Patricia Ceresani",
+  "answerable": true,
+  "source_chunk_id": "bim_erp_executive_master_catalogue_2023-p15-1",
+  "file": "bim_erp_executive_master_catalogue_2023.pdf",
+  "page": 15,
+  "passage": "an Architect, Doctor of architectural sciences, BIM consultant and experienced educator in teaching BIM. She’s qualified as Lecturer of the Nationals Schools of Architecture in France and Certified Autodesk Instructor and associated researcher at the MAP-CRIA laboratory. Her research work focuses on digital design with great involvement in themes aiming to develop current BIM practices, through new approaches allowing models verification, optimization and control. Aida is passionate about helping students develop their skills in BIM and preparing them for successful careers in this field. Patricia Ceresani joined SMU in 2014 and is the Director of the Language and Culture Institute. She is responsible for the Business English and Soft Skills programs for executive training, the Study Abroad Program, and the Communication department at MSB. Patricia has a BA in Modern Languages and a BA in Humanities and Social Sciences. She has a consolidated 30 years of experience in the field of teaching English, Business Communication, and Public Speaking for both the higher education and the corporate sectors. Patricia has worked in many countries worldwide and with several multinationals in Tunisia. DR. ONS NAJJAR DR. NÉJIB CHENNOUFI DR. AIDA SIALA PATRICIA CERESANI BIM & ERP Management 15",
+  "id": 146
+ },
+ {
+  "question": "When does the Executive Master in BIM & ERP Management program start?",
+  "answer": "31st August",
+  "answerable": true,
+  "source_chunk_id": "bim_erp_executive_master_flyer_2023-p1-0",
+  "file": "bim_erp_executive_master_flyer_2023.pdf",
+  "page": 1,
+  "passage": "EXECUTIVE MASTER The Building Information Modeling (BIM) and Enterprise Resource Planning (ERP) methodologies have revolutionized the Architecture, Engineering, Construction, and Operation (AECO) industry. The Executive Master in BIM & ERP Management at MedTech aims at training professionals from the AECO industry, and equip them with the necessary tools and competencies for management roles in BIM projects. th AUGUST Executive Master in BIM & ERP Management START DATE",
+  "id": 147
+ },
+ {
+  "question": "What sectors does the Executive Master in BIM & ERP Management program cater to?",
+  "answer": "architects, engineers, builders, developers, financiers, asset managers, and facilities managers",
+  "answerable": true,
+  "source_chunk_id": "bim_erp_executive_master_flyer_2023-p2-1",
+  "file": "bim_erp_executive_master_flyer_2023.pdf",
+  "page": 2,
+  "passage": "in the region. Faculty Strong methodological approach facilitated with digital tools to achieve efficient coordination of processes, workflows, people, assets and technology that BIM requires within the AECO sector. openBIM collaborative process as a sustainable information management approach of the building assets based on open standards and cloud workflows. Tailored learning pathways to meet the needs of professionals from different sectors of the AECO industry, such as architects, engineers, builders, developers, financiers, asset managers, and facilities managers. The program key differential values Campus SMU : Les jardins du Lac 2, Tunis sarra.toumi@medtech.tn www.smu.tn Lorem ipsum (+216) 20 698 631",
+  "id": 149
+ },
+ {
+  "question": "How many labs are included in the Certified Ethical Hacker (C|EH) v12 program?",
+  "answer": "over 220 labs",
+  "answerable": true,
+  "source_chunk_id": "certified_ethical_hacking-p1-0",
+  "file": "certified_ethical_hacking.pdf",
+  "page": 1,
+  "passage": "Certified Ethical Hacking I. Program overview & Benefit: II. Intended Participants: III. Program Curriculum The Certified Ethical Hacker (C|EH) v12 program is a comprehensive certification designed to impart the latest ethical hacking skills and knowledge. Over the past 20 years, it has become a benchmark for cybersecurity expertise, equipping professionals to protect and secure IT infrastructures. This program combines theoretical learning with practical labs, offering a deep dive into ethical hacking phases like Reconnaissance, Scanning, Gaining Access, Maintaining Access, and Covering Tracks. Participants will benefit from hands-on experience with over 220 labs, access to 3500+ hacking tools, and preparation for real-world ethical hacking scenarios. The curriculum covers 20 refreshed modules, including the latest in MITRE ATTACK Framework, intrusion analysis, and cloud computing, ensuring learners are up-to-date with current cybersecurity challenges. The C|EH v12 not only prepares you for the certification exam but also equips you with the skills necessary for various cybersecurity roles. It's recognized globally, enhancing career prospects and professional credibility. Through this program, learners can master ethical hacking techniques beyond the certification, engaging in continuous learning and global hacking competitions. This structured approach to ethical hacking education ensures that participants are well-prepared to identify and tackle vulnerabilities, making",
+  "id": 150
+ },
+ {
+  "question": "How many modules are included in the Certified Ethical Hacker (C|EH) v12 program?",
+  "answer": "20 modules",
+  "answerable": true,
+  "source_chunk_id": "certified_ethical_hacking-p1-1",
+  "file": "certified_ethical_hacking.pdf",
+  "page": 1,
+  "passage": "professional credibility. Through this program, learners can master ethical hacking techniques beyond the certification, engaging in continuous learning and global hacking competitions. This structured approach to ethical hacking education ensures that participants are well-prepared to identify and tackle vulnerabilities, making it an essential certification for anyone looking to advance in the cybersecurity field. The Certified Ethical Hacker (C|EH) v12 program is tailored for a diverse range of professionals involved in the cybersecurity domain. Intended participants include: This program is designed for those already in the cybersecurity field looking to enhance their skills and knowledge in ethical hacking, as well as individuals seeking to enter the field with a comprehensive understanding of how to protect and secure IT infrastructures against potential threats. The Certified Ethical Hacker (C|EH) v12 offers a blend of theoretical knowledge and practical labs across 20 modules, covering essential cybersecurity and ethical hacking topics. Participants engage in hands-on experiences in a state-of-the-art cyber range, mastering skills from system hacking to cloud computing and IoT hacking. This curriculum is designed to equip learners with in-demand cybersecurity capabilities, culminating in a globally recognized certification. IV. Core program curriculum: includes a comprehensive set of 20 refreshed modules, designed to cover the",
+  "id": 151
+ },
+ {
+  "question": "How many hours is the C|EH v12 certificate program and how long are the weekly sessions?",
+  "answer": "40 hours total, with 4 hours each week",
+  "answerable": true,
+  "source_chunk_id": "certified_ethical_hacking-p2-0",
+  "file": "certified_ethical_hacking.pdf",
+  "page": 2,
+  "passage": "V. Schedule: VI. Enrollment requirements: VII. The Benefits of the program: This curriculum is designed to provide participants with the knowledge and hands-on experience necessary to identify and exploit vulnerabilities in various systems and networks, making it an essential program for anyone looking to advance their career in cybersecurity. The C|EH v12 program not only equips participants with the latest ethical hacking techniques and knowledge but also significantly enhances their career prospects, professional recognition, and confidence in cybersecurity roles. The certificate program entails a commitment of 40 hours, with sessions lasting 4 hours each week. Candidates have the flexibility to select their preferred schedule from the following options: Enrollment requirements are straightforward: there are no specific prerequisites. However, participants are expected to have a basic understanding of networking, operating systems, and coding principles. Introduction to Ethical Hacking: Fundamentals of ethical hacking, information security controls, laws, and standards. Footprinting and Reconnaissance: Techniques and tools for footprinting and reconnaissance. Scanning Networks: Network scanning techniques and countermeasures. Enumeration: Enumeration techniques and countermeasures. Vulnerability Analysis: Identifying security loopholes in networks, communication infrastructure, and end systems. System Hacking: System hacking methodologies to discover vulnerabilities. Malware Threats: Types of malware, malware analysis procedures, and countermeasures. Sniffing:",
+  "id": 153
+ },
+ {
+  "question": "When are the evening classes for the ethical hacking program held?",
+  "answer": "Monday and Tuesday or Thursday and Friday from 6:30 PM to 8:30 PM",
+  "answerable": true,
+  "source_chunk_id": "certified_ethical_hacking-p2-2",
+  "file": "certified_ethical_hacking.pdf",
+  "page": 2,
+  "passage": "safeguarding organizations. Practical Learning: Labs mimic real-world cyber threats, enhancing practical skills. Professional Recognition: Highly valued by hiring managers for ethical hacking roles. Confidence Boost: Increases self-confidence in cybersecurity abilities. Comprehensive Coverage: Considered the most thorough ethical hacking program. Community Contribution: Enables participants to contribute effectively to the cybersecurity community. Career Launchpad: Often the starting point for many in their cybersecurity careers. 1 11 cybersecuritycontact@medtech.tn Les jardins du LAC 2, 1053, Tunis - Tunisie From 6:30 PM to 8:30 PM Monday and Tuesday or Thursday and Friday Evening classes Weekend classes From 10:00 AM to 12:00 PM: Saturday and Sunday",
+  "id": 155
+ },
+ {
+  "question": "Who is the Certified Network Defender (CND) v2 program designed for?",
+  "answer": "Professionals in network administration and cybersecurity roles",
+  "answerable": true,
+  "source_chunk_id": "certified_network_defender-p1-0",
+  "file": "certified_network_defender.pdf",
+  "page": 1,
+  "passage": "Certified Network Defender I. Program overview & Benefit: II. Intended Participants: III. Program Curriculum In the evolving landscape of cybersecurity, the Certified Network Defender (CND) v2 program stands as a cornerstone for professionals aiming to master network defense in a post-pandemic world. This program, designed to address the challenges of remote work and expanded digital perimeters, equips participants with the skills necessary to protect, detect, respond to, and predict cybersecurity threats. By integrating the latest tools, technologies, and strategies, the CND v2 ensures that learners are prepared for the dynamic challenges of securing modern networks. Key features of the program include a hands-on learning approach, covering essential topics such as network defense management, endpoint protection, and threat prediction. It is tailored for professionals in network administration and cybersecurity roles, aiming to enhance their capabilities in a comprehensive manner. Participants benefit from an immersive learning experience, guided by the latest industry practices and the NICE 2.0 Framework. The CND v2 is more than just a training program; it is a pathway to becoming a proficient network defender capable of navigating the complexities of cybersecurity in today's interconnected world. The intended participants for the Certified Network Defender (CND) v2 program are individuals",
+  "id": 156
+ },
+ {
+  "question": "How many modules are included in the Certified Network Defender (CND) v2 program curriculum?",
+  "answer": "20",
+  "answerable": true,
+  "source_chunk_id": "certified_network_defender-p1-1",
+  "file": "certified_network_defender.pdf",
+  "page": 1,
+  "passage": "more than just a training program; it is a pathway to becoming a proficient network defender capable of navigating the complexities of cybersecurity in today's interconnected world. The intended participants for the Certified Network Defender (CND) v2 program are individuals working in the network administration/cybersecurity domain. This includes roles such as: The program is designed for all cybersecurity operations roles, and anyone looking to build or advance their career in cybersecurity. The Certified Network Defender (CND) v2 program curriculum is structured to provide a comprehensive understanding of network defense, covering a wide range of topics essential for cybersecurity professionals and, is designed to equip participants with the skills needed to protect, detect, respond to, and predict cybersecurity threats in a dynamic and evolving digital landscape. With a focus on hands-on learning, the program ensures that participants gain practical experience through EC-Council labs, covering a variety of domains crucial for effective network defense. IV. Core program curriculum: includes a comprehensive set of 20 refreshed modules, designed to cover the essentials of network defense. Here's a brief overview of the modules: Security Analysts Network Defense Technicians Security Operators Network Administrators/Engineers Network Security Administrators/Engineers/Analysts Cybersecurity Engineers",
+  "id": 157
+ },
+ {
+  "question": "How many hours is the CND v2 certificate program and how long is each weekly session?",
+  "answer": "40 hours total, with 4 hours each week",
+  "answerable": true,
+  "source_chunk_id": "certified_network_defender-p2-0",
+  "file": "certified_network_defender.pdf",
+  "page": 2,
+  "passage": "V. Schedule: VI. Enrollment requirements: VII. The Benefits of the program: This detailed curriculum is designed to provide participants with a robust understanding of network defense principles, strategies, and practical applications, equipping them with the skills needed to protect, detect, respond to, and predict cybersecurity threats effectively. These benefits make the CND v2 program a must-have for individuals and organizations aiming to equip themselves with the best possible defense against network breaches, emphasizing practical skills and up-to-date knowledge in network security. The certificate program entails a commitment of 40 hours, with sessions lasting 4 hours each week. Candidates have the flexibility to select their preferred schedule from the following options: Enrollment requirements are straightforward: there are no specific prerequisites. However, participants are expected to have a basic understanding of networking, operating systems, and coding principles. Network Attacks and Defense Strategies: Exploration of various network attacks and the strategies to defend against them, ensuring a strong foundation in network defense mechanisms. Administrative Network Security: Focuses on the establishment of network security policies and procedures to manage and secure an organization's information. Technical Network Security: Delve into the technical aspects of securing a network, including the implementation of security measures and technologies.",
+  "id": 158
+ },
+ {
+  "question": "What accreditation does the CHFI v10 program have?",
+  "answer": "ANSI 17024",
+  "answerable": true,
+  "source_chunk_id": "computer_hacking_forensic_investigator-p1-0",
+  "file": "computer_hacking_forensic_investigator.pdf",
+  "page": 1,
+  "passage": "Computer Hacking Forensic Invistigator I. Program overview & Benefit: II. Intended Participants: III. Program Curriculum The EC-Council's CHFI v10 (Computer Hacking Forensic Investigator version 10) is a cutting-edge program tailored for individuals keen on leading the digital forensics movement. Amid the rapid digital transformation and the escalating risk of cyberattacks, this program emerges as a critical solution for mastering digital forensics. CHFI v10 meticulously guides participants through the entire digital forensics process, from uncovering digital footprints left by cyber breaches to legally countering the perpetrators. Structured with a blend of theory and practical sessions, the program is ideal for professionals aiming to excel as forensic analysts, cybercrime investigators, incident responders, IT auditors, among others. It boasts of an ANSI 17024 accreditation, aligning with the NICE 2.0 framework and recognized by the DoD under Directive 8570, ensuring its relevance and applicability in the real world. Participants will delve into specialized modules like Dark Web and IoT Forensics, engage with over 50GB of crafted evidence files for hands-on investigation, and learn the latest in Malware Forensics, including handling contemporary malware threats like Emotet and EternalBlue. Furthermore, the curriculum covers forensic methodologies for cloud infrastructure, including Amazon AWS and Microsoft Azure, preparing students",
+  "id": 162
+ },
+ {
+  "question": "What cloud platforms does the CHFI v10 program cover for forensic methodologies?",
+  "answer": "Amazon AWS and Microsoft Azure",
+  "answerable": true,
+  "source_chunk_id": "computer_hacking_forensic_investigator-p1-1",
+  "file": "computer_hacking_forensic_investigator.pdf",
+  "page": 1,
+  "passage": "of crafted evidence files for hands-on investigation, and learn the latest in Malware Forensics, including handling contemporary malware threats like Emotet and EternalBlue. Furthermore, the curriculum covers forensic methodologies for cloud infrastructure, including Amazon AWS and Microsoft Azure, preparing students for challenges in today's cloud-centric operational environments. CHFI v10 is not just a program but a gateway to becoming an indispensable part of the cybersecurity landscape, endorsed by top practitioners and trusted across the Fortune 500 companies globally. The intended participants for the EC-Council's CHFI v10 (Computer Hacking Forensic Investigator version 10) program are professionals and aspiring professionals in various cybersecurity and digital forensics roles. This includes: The program is engineered for individuals looking to deepen their expertise in digital forensics, aiming to address the growing need for skilled professionals capable of identifying, responding to, and investigating cyber breaches and cybercrimes. The CHFI v10 program from EC-Council offers an in-depth journey into the world of digital forensics, tailored to the contemporary digital landscape. This comprehensive curriculum is designed to equip participants with the essential skills and knowledge required for excellence in digital forensics. Participants will engage in practical and theoretical learning, covering the critical aspects of digital forensics analysis and",
+  "id": 163
+ },
+ {
+  "question": "How many modules are included in the CHFI v10 curriculum?",
+  "answer": "16",
+  "answerable": true,
+  "source_chunk_id": "computer_hacking_forensic_investigator-p1-2",
+  "file": "computer_hacking_forensic_investigator.pdf",
+  "page": 1,
+  "passage": "contemporary digital landscape. This comprehensive curriculum is designed to equip participants with the essential skills and knowledge required for excellence in digital forensics. Participants will engage in practical and theoretical learning, covering the critical aspects of digital forensics analysis and evaluation. From identifying digital footprints to collecting evidence for legal prosecution, the program walks students through every step of the forensic process with experiential learning. Crafted by industry veterans, this program is ideal for professionals aiming to navigate the complexities of cyber breaches and cybercrimes effectively. IV. Core program curriculum: The CHFI v10 curriculum includes a comprehensive set of 16 refreshed modules, designed to equip participants with advanced skills and knowledge in digital forensics. Here's a brief overview of the modules: Security consultants Chief security officers Forensic analysts Cybercrime investigators Cyber defense analysts Incident responders Information technology auditors Malware analysts",
+  "id": 164
+ },
+ {
+  "question": "How many hours does the CHFI v10 certificate program require to complete?",
+  "answer": "40 hours",
+  "answerable": true,
+  "source_chunk_id": "computer_hacking_forensic_investigator-p2-0",
+  "file": "computer_hacking_forensic_investigator.pdf",
+  "page": 2,
+  "passage": "V. Schedule: VI. Enrollment requirements: VII. The Benefits of the program: This curriculum is crafted to provide a thorough understanding of digital forensics, encompassing a wide range of topics essential for forensic analysts, cybercrime investigators, incident responders, and other cybersecurity professionals. These benefits collectively make the CHFI v10 program a valuable and comprehensive learning path for individuals aiming to excel in the field of digital forensics, offering the knowledge, skills, and credentials needed to advance in their careers. The certificate program entails a commitment of 40 hours, with sessions lasting 4 hours each week. Candidates have the flexibility to select their preferred schedule from the following options: Enrollment requirements are straightforward: there are no specific prerequisites. However, participants are expected to have a basic understanding of networking, operating systems, and coding principles. Computer Forensics in Today’s World: An introduction to the field of digital forensics, highlighting its importance in the modern digital age. Computer Forensics Investigation Process: Detailed processes involved in conducting forensic investigations from start to finish. Understanding Hard Disks and File Systems: Fundamental knowledge of how data is stored and managed on digital devices. Data Acquisition and Duplication: Techniques for securely collecting and duplicating data for analysis without",
+  "id": 165
+ },
+ {
+  "question": "What are the class times for the program's evening and weekend sessions?",
+  "answer": "Evening classes from 6:30 PM to 8:30 PM Monday and Tuesday or Thursday and Friday; Weekend classes from 10:00 AM to 12:00 PM Saturday and Sunday",
+  "answerable": true,
+  "source_chunk_id": "computer_hacking_forensic_investigator-p2-2",
+  "file": "computer_hacking_forensic_investigator.pdf",
+  "page": 2,
+  "passage": "from mobile devices. IoT Forensics: Approaches to investigate Internet of Things devices and gather digital evidence. Globally Recognized Certification: ANSI 17024 accreditation and recognition by the DoD under Directive 8570. Comprehensive Coverage: Includes critical areas like Dark Web and IoT Forensics, and extensive labs in Malware Forensics. Up-to-Date Content: Massive updates across all modules to cover the latest forensic methodologies, especially for public cloud infrastructures like Amazon AWS and Microsoft Azure. Practical Learning: More than 50GB of evidence files for investigation purposes and exposure to the latest forensic tools including Splunk and DNSQuerySniffer. Advanced Techniques: In-depth focus on volatile and non-volatile data acquisition and examination, along with new techniques for defeating anti-forensic measures. Industry Acceptance: Trusted by cybersecurity practitioners across Fortune 500 companies globally. From 6:30 PM to 8:30 PM Monday and Tuesday or Thursday and Friday Evening classes Weekend classes From 10:00 AM to 12:00 PM: Saturday and Sunday cybersecuritycontact@medtech.tn Les jardins du LAC 2, 1053, Tunis - Tunisie",
+  "id": 167
+ },
+ {
+  "question": "What skills does the Master's in Cyber Security program aim to develop for students?",
+  "answer": "Skills in IT security design, development, control, advanced computer security, research leadership, and IT security management.",
+  "answerable": true,
+  "source_chunk_id": "cybersecurity_brochure_jan_2024-p2-0",
+  "file": "cybersecurity_brochure_jan_2024.pdf",
+  "page": 2,
+  "passage": "Our Cyber Security Master’s focuses on the essential skill of protecting electronic data against unauthorized access. This program offers a comprehensive journey into the realm of Cyber Security, providing you with the tools and knowledge to excel in safeguarding digital information. Our Master’s Degree in Cyber Security is structured to deliver advanced and specialized education in the domain of Computer Security, ensuring alignment with the latest updates and trends in the field. This dynamic program is a response to global and national calls aimed to equip you with: Enhance undergraduate training with a focus on IT security design, development, and control skills. Provide advanced computer security training for doctoral program readiness. Develop skills in designing, developing, and evaluating IT security solutions. Cultivate the ability to lead research projects and integrate into research teams in computer security. Elevate IT professionals’ knowledge for effective practice, especially as IT security managers. Foster comprehensive expertise in technological, human, and organizational aspects of IT security. Prepare individuals for roles like Information Security Officer in the IT security domain. Foster independent research and development capabilities, enabling skill expansion in the field. CRYPTOGRAPHY CYBER SECURITY ASSESSMENT AND MANAGEMENT AI FOR CYBERSECURITY COMPUTER NETWORK SECURITY ENGINEERING ETHICS &",
+  "id": 168
+ },
+ {
+  "question": "How long does the Master in Cyber Security program take to complete?",
+  "answer": "2 Years",
+  "answerable": true,
+  "source_chunk_id": "cybersecurity_brochure_jan_2024-p2-1",
+  "file": "cybersecurity_brochure_jan_2024.pdf",
+  "page": 2,
+  "passage": "Prepare individuals for roles like Information Security Officer in the IT security domain. Foster independent research and development capabilities, enabling skill expansion in the field. CRYPTOGRAPHY CYBER SECURITY ASSESSMENT AND MANAGEMENT AI FOR CYBERSECURITY COMPUTER NETWORK SECURITY ENGINEERING ETHICS & PROFESSIONAL PRACTICE INCIDENT RESPONSE AND RECOVERY MACHINE LEARNING IOT SECURITY EFFECTIVE TECHNICAL COMMUNICATION PERVASIVE COMPUTING & CLOUD DESIGN AND DEVELOPMENT OF SECURE SOFTWARE EC-C CERTIFICATION: CEH OR NDE SEMESTER 1 SEMESTER 2 Secure your Career, Become a Cyber Security Leader with MedTech’s Master degree in Cyber Security WHY OUR CYBER SECURITY MASTER? CURRICULUM Duration Schedule Start Date 2 Years flexible for working professionals April The International Council of E-Commerce Consultants, or EC-Council, stands as the world’s leading authority in Cyber Security certification. Operating in 145 countries, EC-Council has developed and owns esteemed certifications such as the Certified Ethical Hacker (C|EH), Computer Hacking Forensics Investigator (C|HFI), and the Certified Security Analyst (ECSA). Their programs have contributed to the training and certification of over 300,000 information security professionals globally. This has significantly influenced the cyber security landscape of numerous organizations around the world. WHY EC-COUNCIL CERTIFICATIONS ?",
+  "id": 169
+ },
+ {
+  "question": "How many modules are included in the Digital Forensics Essentials program curriculum?",
+  "answer": "12 modules",
+  "answerable": true,
+  "source_chunk_id": "digital_forensics_essentials-p1-0",
+  "file": "digital_forensics_essentials.pdf",
+  "page": 1,
+  "passage": "Digital Forensics Essentials I. Program overview & Benefit: II. Intended Participants: III. Program Curriculum Digital Forensics Essentials (DFE) is an essential course designed for individuals aiming to enhance their competency and expertise in digital forensics and information security. This comprehensive program introduces participants to the fundamentals of computer forensics, the computer forensics investigation process, and specialized areas such as Dark Web, Windows, Linux, and Malware forensics. The course incorporates interactive labs to ensure practical, hands-on experience, crucial for a successful career in digital forensics. Certification in DFE offers formal recognition of a learner's expertise and skills, significantly improving their employment prospects, opportunities for higher salaries, and job satisfaction. This program is tailored for individuals seeking to start or advance their careers in digital forensics and information security. It is ideally suited for: The curriculum focuses on imparting practical skills and knowledge in digital forensics, and is divided into 12 modules covering different aspects of the field: Computer support Specialist Network Technician And more Cybersecurity Technician IT Specialist Systems Specialist Computer Forensic Fundamentals Computer Forensic Investigation Process Understanding Hard Disks and File Systems Data Acquisition and Duplication Defeating Anti-Forensic Techniques Windows Forensics Linux and Mac Forensics Network Forensics Investigating Web Attacks",
+  "id": 170
+ },
+ {
+  "question": "How many hours per week do I need to commit to the certificate program?",
+  "answer": "12 hours in total, with sessions of 4 hours each week",
+  "answerable": true,
+  "source_chunk_id": "digital_forensics_essentials-p1-1",
+  "file": "digital_forensics_essentials.pdf",
+  "page": 1,
+  "passage": "Technician And more Cybersecurity Technician IT Specialist Systems Specialist Computer Forensic Fundamentals Computer Forensic Investigation Process Understanding Hard Disks and File Systems Data Acquisition and Duplication Defeating Anti-Forensic Techniques Windows Forensics Linux and Mac Forensics Network Forensics Investigating Web Attacks Dark Web Forensics Investigating Email Crimes Malware Forensics IV. Schedule: The certificate program entails a commitment of 12 hours, with sessions lasting 4 hours each week. Candidates have the flexibility to select their preferred schedule from the following options: From 6:30 PM to 8:30 PM Monday and Tuesday or Thursday and Friday Evening classes Weekend classes From 10:00 AM to 12:00 PM: Saturday and Sunday",
+  "id": 171
+ },
+ {
+  "question": "How many modules are included in the Ethical Hacking Essentials course?",
+  "answer": "12 modules",
+  "answerable": true,
+  "source_chunk_id": "ethical_hacking_essentials-p1-0",
+  "file": "ethical_hacking_essentials.pdf",
+  "page": 1,
+  "passage": "Ethical Hacking Essentials I. Program overview & Benefit: II. Intended Participants: III. Program Curriculum Ethical Hacking Essentials (EHE) is a foundational course designed to equip learners with the essential skills and knowledge required for a successful career in cybersecurity. This comprehensive program introduces participants to the core concepts of computer and network security, ethical hacking, and penetration testing. Covering a wide range of topics from threats and vulnerabilities, password cracking, and web application attacks, to IoT and OT attacks, cloud computing, and pentesting fundamentals, the course provides a broad understanding of the cybersecurity landscape. Through hands-on practical experience, learners gain valuable skills that prepare them for real-world challenges in the cybersecurity domain. Certification in Ethical Hacking Essentials offers formal recognition of expertise and skills, enhancing employment prospects, opportunities for advancement, higher salaries, and greater job satisfaction. This program is ideal for individuals seeking to start or advance their careers in cybersecurity. It is suitable for: The curriculum focuses on imparting practical skills and knowledge in ethical hacking, and is divided into 12 modules, each focusing on a different aspect of cybersecurity: Computer support Specialist Network Technician Help Desk Technician Technical Support Specialist Systems Specialist Information Security Fundamentals: Introduction to the",
+  "id": 173
+ },
+ {
+  "question": "How many hours per week are the sessions for the certificate program, and what scheduling options are available?",
+  "answer": "Sessions last 4 hours each week, with options including Monday and Tuesday or Thursday and Friday evenings from 6:30 PM to 8:30 PM, or weekend classes from 10:00 AM to 12:00 PM on Saturday and Sunday.",
+  "answerable": true,
+  "source_chunk_id": "ethical_hacking_essentials-p1-2",
+  "file": "ethical_hacking_essentials.pdf",
+  "page": 1,
+  "passage": "of conducting penetration tests. 1 7 IV. Schedule: The certificate program entails a commitment of 12 hours, with sessions lasting 4 hours each week. Candidates have the flexibility to select their preferred schedule from the following options: From 6:30 PM to 8:30 PM Monday and Tuesday or Thursday and Friday Evening classes Weekend classes From 10:00 AM to 12:00 PM: Saturday and Sunday",
+  "id": 175
+ },
+ {
+  "question": "Are there any prerequisites to enroll in the EHE program?",
+  "answer": "No specific prerequisites, but participants are expected to have a basic understanding of networking, operating systems and coding principles",
+  "answerable": true,
+  "source_chunk_id": "ethical_hacking_essentials-p2-0",
+  "file": "ethical_hacking_essentials.pdf",
+  "page": 2,
+  "passage": "V. Enrollment requirements: VI. The Benefits of the program: These benefits clearly illustrate the dual impact of the EHE program: it not only propels individuals forward in their cybersecurity careers but also plays a crucial role in strengthening the security of our digital environment. By equipping participants with fundamental understanding of ethical hacking, Enrollment requirements are straightforward: there are no specific prerequisites. However, participants are expected to have a basic understanding of networking, operating systems, and coding principles. A strong foundation in the principles and practices of ethical hacking and cybersecurity. Hands-on experience with the latest tools and techniques in the field. The ability to identify, assess, and mitigate various cybersecurity threats and vulnerabilities. Enhanced career opportunities in the fast-growing field of cybersecurity. Formal recognition through certification, aiding in job advancement and satisfaction. cybersecuritycontact@medtech.tn Les jardins du LAC 2, 1053, Tunis - Tunisie",
+  "id": 176
+ },
+ {
+  "question": "How often do classes meet for the Executive Master in Digital Health and AI program?",
+  "answer": "four days a month (Thursday through Sunday)",
+  "answerable": true,
+  "source_chunk_id": "master_digital_health_and_ai-p2-0",
+  "file": "master_digital_health_and_ai.pdf",
+  "page": 2,
+  "passage": "The Executive master’s in digital health and AI is Designed to teach the interdisciplinary knowledge and skills required to drive innovation in the expanding area of digital health. Digital Health and AI program recognizes the interaction between technologies and people in healthcare and draws on the expertise of faculty from across SMU university and internationals to create an interdisciplinary learning experience, healthcare systems, medical Law, change management, engineering, artificial intelligence, and data science. Aimed at early- or mid-career professionals, participants to the Digital Health and AI MSc will come from a wide range of backgrounds, including health professionals, public health, statistics, computer science and engineering. The Program The program consists of modules and projects aiming at: Providing the essential tools and practical skills to pursue a career in leading digital transformation for health. Developing leadership and critical thinking for Digital Transformation in Health with assurances of their ethical, safe, and effective deployments. Developing Communication and Change management skills. Operating and leading in a multidisciplinary environment. The Format The Executive Master in Digital Health and Artificial Intelligence is a part-time program, designed to tailor the work and life commitments of participants. Classes meet four days a month (Thursday through Sunday from",
+  "id": 177
+ },
+ {
+  "question": "Which universities does MedTech have dual diploma partnerships with?",
+  "answer": "University of Michigan-Dearborn, USA and HEC Montreal, Canada",
+  "answerable": true,
+  "source_chunk_id": "medtech_catalogue_june_2026-p5-0",
+  "file": "medtech_catalogue_june_2026.pdf",
+  "page": 5,
+  "passage": "MEDTECH Mediterranean Institute of Technology WHY CHOOSE MEDTECH ? The Mediterranean Institute of Technology is a community driven by a shared purpose that is to develop the minds of young engineers. All nationalities and all disciplines are welcome to explore the fields of Software Engineering, Computer Systems, Renewable Energy, Artificial Intelligence and Blockchain applications. OPENING NEW PROFESSIONAL HORIZONS Experienced faculty, all holding PhDs from prestigious universities. To improve the student experience, MedTech provides state-of-the-art information technology, tools and resources suited for both blended and hybrid learning. Laboratories in major scientific fields (Renewable Energy, Computer Science, Electronics, Physics, Chemistry). A well-equipped makerspace dedicated to students to elaborate their projects. Opportunities to benefit from visiting professors, joint research projects and dual diploma partnership with the University of Michigan-Dearborn, USA and HEC Montreal, Canada. Successful engineers require a diverse set of competencies that extend to communication skills, business, management, and an appreciation of the regulatory environment and the interplay between ethics and modern technologies. HIGHLY QUALIFIED PROFESSORS MODERN TEACHING METHODS STATE OF THE ART FACILITIES & LABORATORIES POSSIBILITIES OF DOUBLE DEGREES WELL-ROUNDED TRAINING IN BUSINESS, MANAGEMENT, GOVERNANCE & ETHICS",
+  "id": 179
+ },
+ {
+  "question": "How long does the MedTech engineering program last?",
+  "answer": "5 years",
+  "answerable": true,
+  "source_chunk_id": "medtech_catalogue_june_2026-p7-0",
+  "file": "medtech_catalogue_june_2026.pdf",
+  "page": 7,
+  "passage": "MEDTECH Mediterranean Institute of Technology Duration 5 years Credits 300 ECTS Language English FORMAT & STRUCTURE PROGRAMS OBJECTIVES MedTech engineering programs are designed to train future engineers to apply scientific knowledge to problem solving. Start Smart Pre- Engineering 2,5 years 2,5 years 6 months Engineering Cycle Capstone Project Graduation SOFTWARE ENGINEERING MEDTECH ENGINEERING PROGRAMS RENEWABLE ENERGY ENGINEERING COMPUTER SYSTEMS ENGINEERING FACTS & FIGURES Engineering school in Tunisia in renewable energy engineering and the country’s 1st ABET accredited institution. st Students thriving in a vibrant academic community.+ 700 Of professors holding PhDs from top global universities.+ 90 % Employment rate within the first 6 months after graduation.95 % of alumni working across the world.40 % +",
+  "id": 180
+ },
+ {
+  "question": "Can MedTech students do a semester abroad during their studies?",
+  "answer": "Yes, they can go on exchange for a semester at partner universities like France or Portugal.",
+  "answerable": true,
+  "source_chunk_id": "medtech_catalogue_june_2026-p9-0",
+  "file": "medtech_catalogue_june_2026.pdf",
+  "page": 9,
+  "passage": "MEDTECH Mediterranean Institute of Technology INTERNATIONAL OPPORTUNITIES MedTech students are given the opportunity to go on exchange in one of our partner universities like France or Portugal. During the exchange, they spend a semester abroad where they experience new ways of learning as well as a rich cultural exchange. EXCHANGE PROGRAM CAPSTONE PROGRAM INTERNATIONAL COLLABORATIVE PARTNERSHIPS DOUBLE DEGREE PROGRAM* In the middle of their 5 th year of Engineering, and before graduating, MedTech students can spend 6 months in one of our Capstone partners, to work on their capstone projects for the end of their studies, with the assistance of both MedTech professors and a professor from the partner university. MedTech students can benefit from one of our International Collaborative Partnerships (ICP) and earn an MSc in either Business, Business and Technology or Engineering. Formats are either 3+2, 4+2 or 5+1. *Please see our website for more details. MedTech students can benefit from a Double Degree oppor- tunity with HEC Montreal and receive a BBA from HEC Montreal, plus a 5-year National Engi- neering Degree from MedTech within 5 years. *Please see page 10 for more details.",
+  "id": 182
+ },
+ {
+  "question": "How long does the Computer Science Licence program at MedTech last?",
+  "answer": "3 years",
+  "answerable": true,
+  "source_chunk_id": "medtech_catalogue_june_2026-p11-0",
+  "file": "medtech_catalogue_june_2026.pdf",
+  "page": 11,
+  "passage": "MEDTECH Mediterranean Institute of Technology MESRS MEDTECH LICENCE IN COMPUTER SCIENCE Duration 3 years Credits 180 ECTS Language English PROGRAM OBJECTIVES The main objective of the Licence program in Computer Science is to train future graduates to be successfully employed in the field of computing, or to enroll in advanced degrees in computer Science or any other related discipline. MedTech’s Computer Science Licence program provides students with a combination of advanced technical and theoretical knowledge, best engineering practices, and emerging technologies to develop software that meets high quality standards. The educational program has a thorough basis in the principles and practices of computing as well as real-world learning experiences through team-centered and hands-on projects to prepare students properly to engage in further learning. Besides technical skills, upon successful completion of the program, graduates will acquire social and entrepreneurial skills. ENROLL IN AN ENRICHING EXPERIENCE",
+  "id": 183
+ },
+ {
+  "question": "What courses are included in the first year of the Computer Science Licence at MedTech?",
+  "answer": "Academic English, Calculus I, Introduction to Algorithmics & Programming, Digital Systems, Multimedia Technologies, Introduction to Psychology, Discrete Mathematics, Calculus II, Databases, Introduction to Computer Networks, Computer Organization & Design, English Composition, L1 Project",
+  "answerable": true,
+  "source_chunk_id": "medtech_catalogue_june_2026-p12-0",
+  "file": "medtech_catalogue_june_2026.pdf",
+  "page": 12,
+  "passage": "MEDTECHPROGRAM BREAKDOWN Mediterranean Institute of TechnologyLicence LICENCE IN COMPUTER SCIENCE YEAR 1 Term 1 Term 2 Academic English Calculus I Introduction to Algorithmics & Programming Digital Systems Multimedia Technologies Introduction to Psychology Discrete Mathematics Calculus II Databases Introduction to Computer Networks Computer Organization & Design English Composition L1 Project YEAR 2 Term 3 Term 4 Linear Algebra Object Oriented Programming & advanced laboratory Technical Writing Object Oriented Design Web Dev Introduction to Operating Systems Probability & Statistics Mobile Dev Graph Theory & Applications Introduction to AI and Data science Introduction to Distributed Systems Introduction to Managemnent Data Structures & Algorithms Introduction to Automata theory & compilation L2 Project YEAR 3 Term 5 Term 6 Software Architecture Software Quality & Testing UX design ERP Effective Technical Communication Startup Engineering Prompt Engineering ML Capstone Project THERE’S A PLACE FOR EVERYTHING, IT’S CALLED COLLEGE Cloud Computing Cyber security Big data",
+  "id": 184
+ },
+ {
+  "question": "What are some of the courses offered in the first year of the Cyber Security Master's program?",
+  "answer": "Cryptography, Cyber Security Assessment And Management, Ai For Cybersecurity, Computer Network Security, Engineering Ethics & Professional Practice, Incident Response And Recovery",
+  "answerable": true,
+  "source_chunk_id": "medtech_catalogue_june_2026-p14-0",
+  "file": "medtech_catalogue_june_2026.pdf",
+  "page": 14,
+  "passage": "MEDTECHPROGRAM BREAKDOWN Mediterranean Institute of TechnologyMaster CYBER SECURITY SOFTWARE ENGINEERING YEAR 1 YEAR 1 YEAR 2 YEAR 2 Cryptography Cyber Security Assessment And Management Ai For Cybersecurity Computer Network Security Engineering Ethics & Professional Practice Incident Response And Recovery Software Analysis & Design Database Management Systems Software Quality & Testing Advanced Programming Startup Engineering Artificial Intelligence Machine Learning Data Analytics Pervasive Computing and Cloud Cyber Security and Assessment Research Methods Robotics Blockchain Technology Informatics Security And Law Security And Privacy Information Technologies Security Research Methods Digital Forensics Master Thesis Machine Learning IOT Security Effective Technical Communication Pervasive Computing & Cloud Design And Development Of Secure Software Ec-c Certification: CEH Or NDE Requirements & User Experience Software Architecture Software Development Methodologies Web & Mobile Software Development Engineering Ethics & Professional practice ENHANCE YOUR TECHNICAL SKILLS",
+  "id": 186
+ },
+ {
+  "question": "What skills does the Executive Master in BIM & ERP Management aim to develop?",
+  "answer": "communication, collaboration, critical thinking, leadership, decision-making",
+  "answerable": true,
+  "source_chunk_id": "medtech_catalogue_june_2026-p15-1",
+  "file": "medtech_catalogue_june_2026.pdf",
+  "page": 15,
+  "passage": "consists of modules and workshops aiming at: EXECUTIVE MASTER IN BIM & ERP MANAGEMENT Providing the knowledge and skills of how BIM and ERP methodologies can be applied across a construction/infrastructure project from conception to demolition. Developing communication and collaboration skills. Developing critical thinking, leadership, and decisionmaking skills, and the ability to apprehend strategic decisions dealing with both the technical administration and the execution of a project.",
+  "id": 188
+ },
+ {
+  "question": "How long is the training program offered by the SMU Incubator for early-stage entrepreneurs?",
+  "answer": "6 months",
+  "answerable": true,
+  "source_chunk_id": "medtech_catalogue_june_2026-p17-0",
+  "file": "medtech_catalogue_june_2026.pdf",
+  "page": 17,
+  "passage": "MEDTECH Mediterranean Institute of Technology SMU INCUBATOR SMU CAREER SERVICES ALUMNI AND FAMILY RELATIONS Launched in September 2019, the SMU Incubator was established to nurture the leadership community of South Mediterranean University (MSB & MedTech). Embracing innovation within a vibrant entrepreneurial environment, +10% of our students and alumni are trailblazers, shaping the future and creating value. With a wealth of faculty expertise, SMU is dedicated to fostering its driven talents and project leaders by aiding the growth and execution of their business concepts. The Incubator provides a comprehensive 6-month training for entrepreneurs and spinoffs in the early stage, offering workshops, mentorship, coaching, and access to MSB & MedTech resources and network. This culminates in Pitching Sessions before expert panels, potential clients and interested investors The SMU Incubator is not just a training ground; it’s a gateway for entrepreneurs and companies to expand their horizons to new markets and secure funding through our extensive Alumni and Partner network and have impact on our communities. Our Co-working Space is designed as a collaborative hub for each cohort to leverage collective skills, resources, and business-engineering synergies. In its third year, the latest cohort showcased their innovative FinTech, HRTech, and FoodTech startups to investors",
+  "id": 190
+ },
+ {
+  "question": "What percentage of MedTech alumni are currently in Tunisia?",
+  "answer": "59.15%",
+  "answerable": true,
+  "source_chunk_id": "medtech_catalogue_june_2026-p17-2",
+  "file": "medtech_catalogue_june_2026.pdf",
+  "page": 17,
+  "passage": "graduates to connect with their former school and each other. It offers networking events, and mentorship programs to support alumni’s professional growth. The center also organizes reunions, manages alumni records, to enhance the university’s resources and programs. Its goal is to maintain a vibrant alumni community, provide ongoing support to build a strong, engaged SMU community that contributes to the institution’s legacy and supports current students. Tunisia 59,15% 12,68% 8,45% 7,04% 4,23% 2,82% 1,41% 1,41% 1,41% 1,41% France Germany Spain South Africa United States Canada Qatar United Kingdom Turkey WHERE ARE OUR MEDTECH ALUMNI TODAY ? MEDTECH SENT TO Total Distinct count USA France Germany 9% 12% 8%",
+  "id": 191
+ },
+ {
+  "question": "What is the purpose of Fondation SMU at MedTech?",
+  "answer": "To promote and support the development of Tunisian youth through scholarships, research funding, and employability initiatives.",
+  "answerable": true,
+  "source_chunk_id": "medtech_catalogue_june_2026-p18-0",
+  "file": "medtech_catalogue_june_2026.pdf",
+  "page": 18,
+  "passage": "MEDTECH Mediterranean Institute of Technology Cafeteria, ground floor, MedTech Cafeteria, ground floor, MedTech Resting area, Mezzanine, MedTech AN EXCITING STUDENT LIFE For broader horizons and for a learning experience that does not stop at the doorsteps of the classrooms, the campus features many clubs and associations that provide extracurricular and co-curricular opportunities for students, launching social projects, raising funds and donations for those in need or developing leadership skills and aiming for peace or wining competitions and bringing back trophies with SMU Sports Club. Our students are always learning, developing, and most importantly following their passions around and beyond campus. FONDATION SMU Promotes and supports the development of talents through academic excellence. Fondation SMU is a Tunisian non-profit association created in 2018 by South Mediterranean University to create and manage its Corporate Social Responsibility programs. Its aim is to promote and support the development of Tunisian youth through the funding of student scholarships, research projects as well as employability and capacity building initiatives. Offer scholarships and loans to students who have the talent and ability to succeed but concerns about funding. Facilitate employability of young graduates by bringing them into a high-level training coupled with apprenticeship. Provide an optimal framework",
+  "id": 192
+ },
+ {
+  "question": "When was the SMU Makerspace created?",
+  "answer": "April 1st 2023",
+  "answerable": true,
+  "source_chunk_id": "medtech_catalogue_june_2026-p19-0",
+  "file": "medtech_catalogue_june_2026.pdf",
+  "page": 19,
+  "passage": "MEDTECH Mediterranean Institute of Technology SMU MAKERSPACE Dedicated to creativity and innovation, SMU Makerspace is a space where students, faculty and alumni can gather to invent, create and learn with a “do it yourself” spirit. SMU Makerspace enables SMU Community members to explore new interests and to develop creative projects from conception to implementation. Created on April 1st 2023 at the cutting edge of technology, the Trading Room of the South Mediterranean University offers 18 specialized workstations allowing the University’s students to experience the environment and the activity of the highly performing financial analysis and trading platforms. Students and faculty members benefit from access to Refinitiv Eikon and Datastream platforms and to Cloud / Windows based Financial Trading and portfolio management simulation platforms. IN THIS SPACE, YOU MAKE YOUR DREAMS COME TRUE",
+  "id": 193
+ },
+ {
+  "question": "What documents do I need to open a bank account when moving to Tunisia as an SMU student?",
+  "answer": "Certificate of registration at SMU, first page of passport, Residency Card, housing contract",
+  "answerable": true,
+  "source_chunk_id": "medtech_catalogue_june_2026-p20-0",
+  "file": "medtech_catalogue_june_2026.pdf",
+  "page": 20,
+  "passage": "MEDTECH Mediterranean Institute of Technology Scholarships: MedTech grants merit scholarships for outstanding students who cannot afford the tuition fees in order to promote academic excellence and provide better accessibility to quality education. MedTech also provides diversity scholarships to further enhance the cultural and international diversity on the SMU campus. Financial aid: SMU assists students in the process of getting grants, scholarships or student loans. Student employment: SMU students can find many employment opportunities on campus, such as part-time librarian or internships in different SMU departments. Housing: SMU is located in the new development Lac 2 where you will find higher-end accommodation. Cheaper options are Jardins de Carthage or El Aouina. La Marsa and Sidi Bou Said are popular options with expats as they are quite diverse and have many options for entertainment. Bank account: Opening a bank account will probably be one of your priorities when moving to Tunisia. You will only need to provide: A copy of your certificate of registration at SMU, a copy of the first page of your passport, a copy of your Residency Card and a housing contract. Health services: On campus, students will find a full-time nurse and a contracted doctor with whom you",
+  "id": 194
+ },
+ {
+  "question": "Where can I find health services on campus at SMU?",
+  "answer": "At the nursery (Mezzanine, MSB building) with a full-time nurse and a contracted doctor",
+  "answerable": true,
+  "source_chunk_id": "medtech_catalogue_june_2026-p20-1",
+  "file": "medtech_catalogue_june_2026.pdf",
+  "page": 20,
+  "passage": "of registration at SMU, a copy of the first page of your passport, a copy of your Residency Card and a housing contract. Health services: On campus, students will find a full-time nurse and a contracted doctor with whom you can have an appointment at the nursery (Mezzanine, MSB building). SMU can also help you get a health insurance. SCHOLARSHIPS & FINANCIAL AID ADMITTED STUDENTS NEXT STEPS To start the application process follow the link: cms.smu.tn/admission www.programs.smu.tn Being the first and only English-Speaking Engineering School offering an Engineering Diploma in Renewable Energies in Tunisia, MedTech provides you with plenty of opportunities to sharpen your skills and mind. RYM KRIAA MedTech ALUMNA MAJOR : RENEWABLE ENERGY AHMED AZIZ OUERTATANI MedTech ALUMNUS MAJOR : COMPUTER SYSTEMS ENGINEERING I belong to the first cohort of MedTech. I am extremely grateful for being provided with a unique opportunity to build a diversified and powerful network and gain technical engineering skills. FATMA EZZAHRA BEN YEDDER MedTech ALUMNA MAJOR : SOFTWARE ENGINEERING MedTech is one of my best life experiences. During my Software Engineering curriculum, I not only gathered a strong technical skills’ background but also learned various soft skills including problem solving, public speaking, technical",
+  "id": 195
+ },
+ {
+  "question": "How many modules are included in the Network Defense Essentials course?",
+  "answer": "twelve",
+  "answerable": true,
+  "source_chunk_id": "network_defense_essentials-p1-0",
+  "file": "network_defense_essentials.pdf",
+  "page": 1,
+  "passage": "Network Defense Essentials I. Program overview & Benefit: II. Intended Participants: III. Program Curriculum The Network Defense Essentials (NDE) course is a comprehensive introduction to the fundamental concepts of information security and network defense. This course is tailored for individuals looking to embark on a career in cybersecurity, providing an essential foundation for entry-level information security or cybersecurity roles. It encompasses a wide array of topics including Identification, Authentication, Authorization, Virtualization, Cloud Computing, Wireless Networks, Mobile and IoT Devices, and Data Security. A significant component of the course is its interactive labs, which offer hands-on, practical experience necessary for a successful future in the cybersecurity field. By earning the NDE certification, individuals gain formal recognition of their competency and expertise in network defense and information security skills, enhancing their resume and employability. This course is designed for individuals aspiring to start a career in cybersecurity. It is ideal for those with a basic understanding of IT networking and cybersecurity concepts. The curriculum of the Network Defense Essentials course is meticulously structured to cover the breadth and depth of information security and network defense. It is divided into twelve modules, each focusing on a key aspect of cybersecurity: This detailed curriculum",
+  "id": 196
  }
 ]

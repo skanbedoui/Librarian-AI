@@ -9,7 +9,7 @@ the data flows, in plain words, and ends with questions you'll likely be asked a
 
 A language model doesn't know MedTech's rules, and if you ask it anyway it will make something
 up. **RAG** (Retrieval-Augmented Generation) fixes that: before asking the model, we **search**
-the student guides for the passages that matter, put those passages in the prompt, and tell the
+MedTech's 14 documents (student guides, catalogue, program brochures) for the passages that matter, put those passages in the prompt, and tell the
 model *"answer only from these, and cite which one you used"*. If the search finds nothing
 relevant, we say *"I don't know"* instead of guessing.
 
@@ -28,14 +28,14 @@ question ──► rag/pipeline.py ──► rag/retrieve.py ──────�
 
 | File | What it does | Lines worth knowing |
 |---|---|---|
-| `rag/config.py` | Every setting in one place, plus the **BASELINE** and **OPTIMISED** configurations. | `Settings` dataclass; `OPTIMISED = replace(BASELINE, ...)` shows exactly what Week 8 changed. |
-| `rag/ingest.py` | Reads each PDF page, cleans it, tracks the current section heading, and cuts it into overlapping 200-word chunks. | `is_table_of_contents` (why we skip TOC pages), `chunk_pages` (the sliding window). |
+| `rag/config.py` | Every setting in one place, plus the **BASELINE** (first version, only used for measuring) and **OPTIMISED** (what the app runs) configurations. | `list_documents` (every PDF in `docs/` is used), `TITLES` (nice names for citations), `OPTIMISED = replace(BASELINE, ...)` shows exactly what Week 8 changed. |
+| `rag/ingest.py` | Reads each PDF page, cleans it, tracks the current section heading, and cuts it into overlapping 200-word chunks. | `clean_line` (NFKC fixes "ﬁ" ligatures), `is_table_of_contents` (why we skip TOC pages), `chunk_pages` (the sliding window). |
 | `rag/llm.py` | Wraps the OpenAI API. Every call adds its tokens and dollars to a `Usage` object, so each answer knows its own cost. | `Usage.add` (the cost formula), `embed` (normalises vectors so dot product = cosine similarity). |
-| `rag/index.py` | Embeds all chunks and saves them as two files. Run once: `python -m rag.index`. | Why a flat file and not a vector DB (comment at the top). |
+| `rag/index.py` | Embeds all chunks and saves them as files. **Rebuilds itself** when a PDF is added to or removed from `docs/`. | Why a flat file and not a vector DB (comment at the top). |
 | `rag/retrieve.py` | The 4 search modes. | `hybrid_search` (RRF), `rerank` (LLM scores 0-10), `search` (one entry point). |
 | `rag/pipeline.py` | The whole question → answer flow. | `ANSWER_SYSTEM` (the rules for the model), the `min_relevance` check (I don't know), the cache. |
 | `app.py` | The Streamlit website: chat, "how it works", evaluation dashboard, 👍/👎 feedback. | `st.cache_resource` (index loaded once for everyone). |
-| `eval/make_questions.py` | Builds the 122-question test set. | Each question keeps its source passage → we can check retrieval. |
+| `eval/make_questions.py` | Builds the 181-question test set. `--new-docs-only` adds questions for new PDFs without touching the reviewed ones. | Each question keeps its source passage → we can check retrieval. |
 | `eval/eval_retrieval.py` | Recall@k and the ablation table. | `is_hit` (what counts as finding the right passage). |
 | `eval/chunk_sweep.py` | Tests chunk sizes 100 / 200 / 400. | |
 | `eval/eval_generation.py` | Runs the full bot on every question; an LLM judge grades correctness, faithfulness, citations. Also latency and cost. | `judge`, the `summary` dict. |
@@ -72,7 +72,7 @@ model to put the number after each fact. The app then shows the page each number
 
 **"I don't know".** If the reranker's best score is below 3/10, nothing relevant was found, so we
 don't even call the answer model. And the model itself is told to start with the exact sentence
-*"I don't know based on the student guides."* when the sources don't answer the question.
+*"I don't know based on the MedTech documents."* when the sources don't answer the question.
 
 **Recall@k.** For a test question, did the right passage appear in the top *k* results?
 Recall@5 = 0.95 means it did for 95% of questions. Measures *search only*.
@@ -100,10 +100,10 @@ python -m eval.eval_generation --config optimised
 
 ## 5. Questions you'll probably be asked
 
-**Why not just put both guides in the prompt?** ~40k tokens per question = ~40× the cost and
+**Why not just put all the documents in the prompt?** ~60k tokens per question = ~60× the cost and
 slower, citations become vague, and it doesn't scale when the corpus grows.
 
-**Why a flat file instead of a vector database?** 129 vectors. Brute-force search is < 1 ms.
+**Why a flat file instead of a vector database?** 227 vectors. Brute-force search is < 1 ms.
 A database would add a server to deploy and maintain for zero speed gain.
 
 **Why 200 words per chunk?** We tested 100, 200 and 400 (`eval/chunk_sweep.py`). See the
@@ -112,8 +112,8 @@ numbers in `eval/results/chunk_sweep.md` and the reasoning in `design.md`.
 **What did hybrid search add? And the reranker?** Read the ablation table in the README: the
 reranker mainly moves the right passage to position 1 (Recall@1, MRR).
 
-**How do you know the answers are right?** 108 answerable questions, each with its source
-passage, plus 14 questions the guides can't answer. An LLM judge compares the bot's answer
+**How do you know the answers are right?** 168 answerable questions, each with its source
+passage, plus 14 questions the documents can't answer. An LLM judge compares the bot's answer
 with the gold answer and checks every claim against the cited chunks.
 
 **Isn't an LLM judging an LLM biased?** Yes, a bit — it's in the postmortem. The judge sees the
@@ -132,5 +132,10 @@ the top chunk. Each change is measured on the same test set.
 doesn't change since each request is independent; OpenAI rate limits would be the first wall.
 The answer cache saves more as traffic grows, since popular questions repeat.
 
-**What's the worst failure?** Mixing the two guides' rules when the student doesn't select a
-program. A wrong answer about absences or exams can cost a student a course.
+**What's the worst failure?** Mixing the two guides' rules (the app searches every document,
+there is no program picker). A wrong answer about absences or exams can cost a student a course.
+
+**How do I add a document?** Put the PDF in `docs/` and restart the app: the index rebuilds
+itself. Optionally give it a nice title in `TITLES` (`rag/config.py`), and run
+`python -m eval.make_questions --new-docs-only` so the test set covers it (then review the new
+questions by hand!).

@@ -2,8 +2,8 @@
 All the knobs of the system live here, so you can see every decision in one place.
 
 Two ready-made configurations are defined at the bottom:
-  * BASELINE  - the "working version" (Week 7)
-  * OPTIMISED - the "cheaper and faster" version (Week 8)
+  * BASELINE  - the first working version (Week 7), kept only to measure against
+  * OPTIMISED - the cheaper and faster version (Week 8): the one the app uses
 """
 from dataclasses import dataclass, replace
 from pathlib import Path
@@ -16,11 +16,28 @@ DATA_DIR = ROOT / "data"          # eval questions, user feedback
 RESULTS_DIR = ROOT / "eval" / "results"
 
 # ---------- Corpus ----------
-# file name -> (nice title, program tag used for metadata filtering)
-DOCUMENTS = {
-    "engineering_guide_2026-2027.pdf": ("Pre-Engineering & Engineering Student Guide 2026-2027", "engineering"),
-    "licence_master_guide_2026-2027.pdf": ("Licence & Master Student Guide 2026-2027", "licence_master"),
+# EVERY PDF in docs/ is used automatically: drop a file in, restart the app, and the index
+# is rebuilt (see rag/index.py: ensure_index). A title shown in citations is made from the
+# file name ("network_defense_essentials.pdf" -> "Network Defense Essentials").
+# Optional: give a nicer title here.
+TITLES = {
+    "engineering_guide_2026-2027.pdf": "Pre-Engineering & Engineering Student Guide 2026-2027",
+    "licence_master_guide_2026-2027.pdf": "Licence & Master Student Guide 2026-2027",
+    "medtech_catalogue_june_2026.pdf": "MedTech Catalogue (June 2026)",
+    "bim_erp_executive_master_catalogue_2023.pdf": "Executive Master in BIM & ERP Management - Catalogue (2023)",
+    "bim_erp_executive_master_flyer_2023.pdf": "Executive Master in BIM & ERP Management - Flyer (2023)",
+    "bim_day_tunisia_2025.pdf": "BIM Day Tunisia 2025 - Event Report",
+    "cybersecurity_brochure_jan_2024.pdf": "Master in Cyber Security - Brochure (Jan 2024)",
+    "master_digital_health_and_ai.pdf": "Executive Master in Digital Health and AI",
+    "certified_ethical_hacking.pdf": "Certified Ethical Hacker (C|EH) Program",
+    "computer_hacking_forensic_investigator.pdf": "Computer Hacking Forensic Investigator (CHFI) Program",
 }
+
+
+def list_documents():
+    """Return [(file name, title), ...] for every PDF in docs/, sorted by name."""
+    return [(p.name, TITLES.get(p.name, p.stem.replace("_", " ").replace("-", " ").title()))
+            for p in sorted(DOCS_DIR.glob("*.pdf"))]
 
 # ---------- Chunking ----------
 CHUNK_WORDS = 200      # target chunk size in words (tested in eval/chunk_sweep.py)

@@ -62,7 +62,7 @@ trusting a score, because sometimes the bot is right and the test is wrong.
 - Faithfulness and citation accuracy came out at **100%**. That's suspicious. The judge
   (`gpt-4.1-mini`) is in the same model family as the generator and may be lenient.
   *(Team: spot-check ~20 answers by hand against their cited pages and record what you find here.)*
-- With 122 questions, one question = 0.8 points. Differences under ~2 points are within
+- With 181 questions, one question = 0.55 points. Differences under ~2 points are within
   run-to-run noise.
 
 **What we'd do next.** Collect 50+ real questions from classmates through the 👍/👎 log, write
@@ -84,10 +84,41 @@ Next time: store feedback in a hosted database or a Google Sheet from day one.
 - PDF page numbers (used in citations) differ from the numbers printed on the pages by 1–2.
   Users looking at a printed copy may not find the cited page right away.
 
-## 7. Limits we knew about and accepted
+## 7. Growing the corpus from 2 to 14 documents
 
-- The corpus is 65 pages, not "hundreds". A bigger version would add the course catalogue and
-  prerequisite rules.
+We added the 2026 catalogue, the BIM & ERP master catalogue and flyer, the BIM Day 2025 report,
+the cybersecurity master brochure, the digital health master brochure and six certification
+brochures (65 → 127 pages). What we learned:
+
+- **File names lie.** `CATALOGUE_MEDTECH_180423_V8` was not a MedTech catalogue but the BIM & ERP
+  master's catalogue, and `BIM_FLYER` was a report on an event. Citations show the document
+  title, so we renamed the files after reading them; otherwise answers would cite the wrong thing.
+- **PDF text was broken in a way you can't see.** Designer-made brochures use the ligature
+  characters "ﬁ" and "ﬂ". They look normal on screen, but BM25 split "officials" into "of" +
+  "cials". One line of Unicode normalisation (NFKC) fixed it.
+- **Hard-coding the document list didn't scale.** The first version listed the two guides by
+  name in `config.py`; a new PDF in `docs/` was silently ignored. Now every PDF is picked up and
+  the index rebuilds itself when `docs/` changes.
+- **The question generator made the same kinds of mistakes again.** Of 77 new questions, we
+  removed 17 (`data/eval_review_log.json`): 7 duplicates (the same fact in the 2023 flyer, 2023
+  catalogue and 2026 catalogue), 8 ambiguous ones ("how many modules in *the* security
+  program?", when six brochures each give a different answer), 1 with a useless gold answer, and
+  1 non-existent program. One more gold answer was simply wrong ("8th August" for a flyer that
+  says "31st August").
+- **Reading the failures found 3 more test bugs.** After the first run on the new corpus, 2 gold
+  answers were incomplete (the bot was right: "no prerequisites, *but* basic networking is
+  expected"; "12 hours total, 4 per week") and 1 question was impossible: the catalogue's course
+  table is flattened, so courses of the three engineering programs come out interleaved. We fixed
+  or removed those 3 and re-graded the same answers. We did **not** change the judge or the 4
+  other strict-but-defensible failures (e.g. "starts in August" for "31st August"), because
+  editing the grader after seeing its results would just be moving the goalposts.
+- **More documents means more ways to be confused.** Old and new documents can disagree, so the
+  prompt now tells the model to prefer the most recent document and say so.
+
+## 8. Limits we knew about and accepted
+
+- The corpus is 127 pages, still short of "hundreds". The course syllabi would be the next addition.
 - Tables (grading scale, calendar) are flattened. A table-aware parser such as `pdfplumber`
   would fix the date confusion in item 3.
-- The two guides overlap. Without the program filter, answers can mix their rules.
+- The two guides overlap, and the app searches everything (no program picker), so answers can
+  mix their rules. The filter still exists in the code (`files=`) if we want it back.

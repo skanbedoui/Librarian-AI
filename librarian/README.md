@@ -1,9 +1,11 @@
-# 📚 The Librarian: Q&A over the MedTech student guides
+# 📚 The Librarian: Q&A over MedTech's documents
 
-A retrieval-augmented (RAG) assistant that answers students' questions about the
-**MedTech 2026-2027 student guides** (Pre-Engineering/Engineering and Licence/Master),
-**with a page citation for every claim**, and says *"I don't know"* when the guides don't have
-the answer.
+A retrieval-augmented (RAG) assistant that answers questions about **MedTech** using
+**14 of its public documents (127 pages)**: the two 2026-2027 student guides (rules, exams,
+grades, absences, scholarships), the June 2026 school catalogue, and brochures for its masters
+(Cyber Security, BIM & ERP, Digital Health & AI) and cybersecurity certifications. Every claim
+comes **with a document + page citation**, and the bot says *"I don't know"* when the documents
+don't have the answer.
 
 CS496 AI Engineering · Project 2 · Fall 2026
 
@@ -31,51 +33,60 @@ streamlit run app.py
 ```
 
 The index is already built and committed (`index/`), so the app works straight from a clean
-clone. To rebuild it from the PDFs: `python -m rag.index`.
+clone.
+
+**Adding a document:** put the PDF in `docs/` and restart the app. The index rebuilds itself
+(about 10 seconds). Optionally give it a nicer title in `TITLES` in `rag/config.py`, and run
+`python -m eval.make_questions --new-docs-only` so the test set covers it (review the new
+questions by hand).
 
 ## Results
 
-### Retrieval: Recall@k and ablation (108 answerable questions)
+### Retrieval: Recall@k and ablation (167 answerable questions)
 
 | Mode | R@1 | R@3 | R@5 | R@10 | MRR | p50 ms | p95 ms |
 |---|---|---|---|---|---|---|---|
-| keyword (BM25) only | 0.84 | 0.95 | 0.98 | 1.00 | 0.90 | 3 | 8 |
-| vector only | 0.75 | 0.94 | 0.96 | 1.00 | 0.84 | 249 | 1017 |
-| hybrid (RRF) | 0.81 | 0.98 | 1.00 | 1.00 | 0.89 | 255 | 474 |
-| hybrid + reranker | **0.88** | **1.00** | **1.00** | 1.00 | **0.94** | 1267 | 1874 |
+| keyword (BM25) only | 0.86 | 0.94 | 0.98 | 0.99 | 0.91 | 4 | 9 |
+| vector only | 0.75 | 0.94 | 0.96 | 0.99 | 0.84 | 209 | 424 |
+| hybrid (RRF) | 0.83 | 0.97 | 0.99 | 0.99 | 0.90 | 212 | 300 |
+| hybrid + reranker | **0.89** | **0.98** | **0.99** | 0.99 | **0.93** | 1027 | 1316 |
 
-- **Hybrid** fixes the misses of each single method at k ≥ 3 (R@5: 0.98 / 0.96 → 1.00).
-- The **reranker** puts the right passage *first* much more often (R@1 0.81 → 0.88, MRR 0.89 → 0.94),
-  for about 1 s of extra latency.
-- Keyword search beating vector search at R@1 is partly an artifact of our generated questions,
-  which reuse the passages' wording (see `postmortem.md` §4).
+- **Hybrid** search fixes misses that each single method makes at k ≥ 3 (R@3: 0.94 / 0.94 → 0.97).
+- The **reranker** puts the right passage *first* much more often (R@1 0.83 → 0.89,
+  MRR 0.90 → 0.93), for about 0.8 s of extra latency.
+- Keyword search beats vector search at R@1 partly because our test questions were generated
+  from the passages and reuse their wording (see `postmortem.md` §4).
 
-Chunk size test (`eval/results/chunk_sweep.md`): 100 / 200 / 400 words → hybrid R@1 0.65 / 0.80 / 0.87.
-We kept 200 as the balance between precision and tokens sent to the LLM (`design.md`).
+Chunk-size test (`eval/results/chunk_sweep.md`): 100 / 200 / 400 words gave hybrid R@1 of
+0.71 / 0.83 / 0.85. We kept 200 as the balance between precision and the tokens sent to the
+LLM (`design.md`).
 
-### Generation and service (122 questions: 108 answerable + 14 unanswerable)
+### Generation and service (181 questions: 167 answerable + 14 unanswerable)
 
-| | Baseline (Week 7) | Optimised (Week 8) |
+The app runs the **optimised** version. The baseline is our first version, kept to measure against.
+
+| | Baseline | Optimised |
 |---|---|---|
-| Accuracy (overall) | 99.2% | 99.2% |
+| Accuracy (overall) | 97.2% | 97.2% |
 | Faithfulness / citation accuracy | 100% / 100% | 100% / 100% |
 | "I don't know" when it should | 92.9% | 100% |
-| p50 / p95 latency | 3.19 s / 4.88 s | **1.62 s / 3.20 s** |
-| Cost per request (list price) | $0.00097 | **$0.00030 (−69%)** |
-| Cost per request (billed, incl. prompt-cache discount) | $0.00074 | $0.00022 (−71%) |
-| Billed cost per month at 200 req/day → at 100× | $4.45 → $445 | $1.29 → $129 |
+| p50 / p95 latency | 2.47 s / 3.24 s | **1.47 s / 2.50 s** |
+| Cost per request (list price) | $0.00099 | **$0.00032 (−68%)** |
+| Cost per request (billed, incl. prompt-cache discount) | $0.00096 | $0.00025 (−74%) |
+| Billed cost per month at 200 req/day → at 100× | $5.75 → $575 | $1.51 → $151 |
 
-Details: `optimisation.md`. The judge is an LLM, so treat 100% faithfulness with care (`postmortem.md`).
+Details are in `optimisation.md`. The judge is an LLM, so treat 100% faithfulness with care (`postmortem.md`).
 
 ## Repository map
 
 | Path | What's inside |
 |---|---|
 | `app.py` | Streamlit app: chat, "How it works" explainer, live evaluation dashboard, 👍/👎 feedback |
-| `rag/` | The pipeline: `ingest.py` (load + chunk), `index.py` (embed + save), `retrieve.py` (BM25, vectors, RRF, rerank), `pipeline.py` (rewrite → retrieve → rerank → generate), `llm.py` (OpenAI + cost tracking), `config.py` (all settings, baseline vs optimised) |
-| `docs/` | The corpus (2 public PDFs) |
-| `index/` | Pre-built index: `chunks.json` + `embeddings.npy` |
-| `data/eval_questions.json` | 122 eval questions with gold answers and source passages |
+| `rag/` | The pipeline: `ingest.py` (load + chunk every PDF in `docs/`), `index.py` (embed + save, rebuilds itself when `docs/` changes), `retrieve.py` (BM25, vectors, RRF, rerank), `pipeline.py` (cache → retrieve → rerank → generate), `llm.py` (OpenAI + cost tracking), `config.py` (all settings, document titles, baseline vs optimised) |
+| `docs/` | The corpus (14 public PDFs, 127 pages) |
+| `index/` | Pre-built index: `chunks.json` + `embeddings.npy` + `manifest.json` (which PDFs it was built from) |
+| `data/eval_questions.json` | 181 eval questions with gold answers and source passages |
+| `data/eval_review_log.json` | Questions we removed or fixed during manual review, and why |
 | `eval/` | `eval_retrieval.py` (recall@k + ablation), `chunk_sweep.py`, `eval_generation.py` (correctness, faithfulness, citations, latency, cost), `optimisation_steps.py`, `cache_demo.py`, `make_questions.py`; results in `eval/results/` |
 | `design.md` | Chunking, index choice, retrieval design, known failure cases |
 | `optimisation.md` | Week 8 report with before/after numbers |
@@ -88,7 +99,7 @@ Details: `optimisation.md`. The judge is an LLM, so treat 100% faithfulness with
 ```bash
 python -m eval.eval_retrieval                     # retrieval + ablation        (~1 min)
 python -m eval.chunk_sweep                        # chunk-size test             (~2 min)
-python -m eval.eval_generation --config baseline  # full pipeline, judged       (~3 min, ~$0.15)
+python -m eval.eval_generation --config baseline  # full pipeline, judged       (~4 min, ~$0.25)
 python -m eval.eval_generation --config optimised
 python -m eval.optimisation_steps                 # each Week 8 change alone    (~10 min)
 python -m eval.cache_demo

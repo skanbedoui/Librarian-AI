@@ -1,7 +1,7 @@
 {
-  "first_time_mean_latency_s": 2.1289202449843287,
-  "repeat_mean_latency_s": 3.040005685761571e-06,
-  "first_time_mean_cost_usd": 0.000269107,
+  "first_time_mean_latency_s": 1.8630296299947076,
+  "repeat_mean_latency_s": 2.544999006204307e-06,
+  "first_time_mean_cost_usd": 0.000262087,
   "repeat_mean_cost_usd": 0.0,
   "repeat_hits": 20
 }

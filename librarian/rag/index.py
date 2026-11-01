@@ -5,13 +5,17 @@ Storage choice: a flat file (chunks.json + embeddings.npy).
 With a few hundred chunks, a brute-force numpy dot product takes well under 1 ms,
 so a vector database would add setup and deployment complexity for no speed gain.
 
-Run:  python -m rag.index
+It also writes manifest.json: the list of PDFs (name + size) the index was built from.
+At start-up, ensure_index() compares it with docs/: if a PDF was added, removed or replaced,
+the index is rebuilt automatically (about 10 seconds, < $0.01).
+
+Run by hand (optional):  python -m rag.index
 """
 import json
 import sys
 import numpy as np
 
-from .config import INDEX_DIR, CHUNK_WORDS, CHUNK_OVERLAP
+from .config import INDEX_DIR, DOCS_DIR, CHUNK_WORDS, CHUNK_OVERLAP
 from .ingest import load_pages, chunk_pages
 from .llm import embed, Usage
 
@@ -26,9 +30,23 @@ def build_index(out_dir=INDEX_DIR, chunk_words=CHUNK_WORDS, overlap=CHUNK_OVERLA
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "chunks.json").write_text(json.dumps(chunks, indent=1, ensure_ascii=False), encoding="utf-8")
     np.save(out_dir / "embeddings.npy", vectors)
+    (out_dir / "manifest.json").write_text(json.dumps(docs_manifest(), indent=1))
     if verbose:
         print(f"Indexed {len(chunks)} chunks into {out_dir}  (embedding cost ${usage.cost:.4f})")
     return chunks, vectors
+
+
+def docs_manifest():
+    """What is in docs/ right now: {file name: size in bytes}."""
+    return {p.name: p.stat().st_size for p in sorted(DOCS_DIR.glob("*.pdf"))}
+
+
+def ensure_index(index_dir=INDEX_DIR):
+    """Rebuild the index if docs/ changed since it was built (or if there is no index)."""
+    manifest = index_dir / "manifest.json"
+    if not manifest.exists() or json.loads(manifest.read_text()) != docs_manifest():
+        print("docs/ changed -> rebuilding the index...")
+        build_index(index_dir)
 
 
 def load_index(index_dir=INDEX_DIR):

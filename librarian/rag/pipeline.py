@@ -11,14 +11,14 @@ The full online pipeline, in the order a question flows through it:
 import re
 import time
 
-from .config import Settings, BASELINE
+from .config import Settings, OPTIMISED
 from .llm import chat, Usage
 from .retrieve import Retriever
 
-IDK = "I don't know based on the student guides."
+IDK = "I don't know based on the MedTech documents."
 
 REWRITE_SYSTEM = (
-    "Rewrite the student's question about university rules into a short, specific search query. "
+    "Rewrite the student's question about the university into a short, specific search query. "
     "Expand abbreviations if obvious (e.g. GPA, CGPA). Keep the student's key terms exactly. "
     "Do NOT add the university's name or generic words. Keep every part of a multi-part question. "
     "Reply with the query only."
@@ -26,8 +26,10 @@ REWRITE_SYSTEM = (
 
 # This system prompt never changes, so it sits FIRST in every request:
 # OpenAI automatically caches long identical prompt prefixes (cheaper + faster).
-ANSWER_SYSTEM = f"""You are "The Librarian", an assistant that answers students' questions about the
-MedTech student guides (academic policies, grades, exams, scholarships, conduct, calendar...).
+ANSWER_SYSTEM = f"""You are "The Librarian", an assistant that answers questions about MedTech
+(Mediterranean Institute of Technology, part of South Mediterranean University - SMU) using its
+documents: student guides (rules, grades, exams, absences, scholarships...), the school catalogue,
+and brochures for its programs and certifications (cybersecurity, BIM, digital health...).
 
 Rules:
 1. Use ONLY the numbered sources given. Never use outside knowledge.
@@ -36,18 +38,19 @@ Rules:
    {IDK}
    If the sources answer it, even partly, just give the answer. Never start with "I don't know"
    and then answer anyway.
-4. If the answer differs between programs (Engineering vs Licence/Master), say so.
+4. If the answer differs between programs (e.g. Engineering vs Licence/Master), say so.
+   If two documents disagree, prefer the most recent one (the year is in its title) and say so.
 5. Be concise: a short paragraph or a few bullet points."""
 
 
 class Librarian:
     def __init__(self, retriever: Retriever | None = None):
         self.retriever = retriever or Retriever()
-        self.cache = {}   # (question, settings, program) -> result   (Week 8 optimisation)
+        self.cache = {}   # (question, settings, files) -> result   (Week 8 optimisation)
 
-    def ask(self, question: str, settings: Settings = BASELINE, program: str | None = None) -> dict:
+    def ask(self, question: str, settings: Settings = OPTIMISED, files: tuple | None = None) -> dict:
         t0 = time.perf_counter()
-        cache_key = (question.strip().lower(), settings, program)
+        cache_key = (question.strip().lower(), settings, files)
         if settings.use_cache and cache_key in self.cache:
             hit = dict(self.cache[cache_key])
             hit.update(cached=True, cost=0.0, cost_list=0.0, latency=time.perf_counter() - t0)
@@ -70,7 +73,7 @@ class Librarian:
         # (2) + (3) Retrieve and maybe rerank
         t = time.perf_counter()
         ranked, info = self.retriever.search(
-            query, settings.search_mode, settings.top_k, program,
+            query, settings.search_mode, settings.top_k, files,
             settings.rerank_model, settings.skip_rerank_if_confident, usage)
         timings["retrieve"] = time.perf_counter() - t
 
