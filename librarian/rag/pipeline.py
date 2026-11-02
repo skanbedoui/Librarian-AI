@@ -17,6 +17,13 @@ from .retrieve import Retriever
 
 IDK = "I don't know based on the MedTech documents."
 
+SMALL_TALK_SYSTEM = (
+    "If the user's message is ONLY a greeting, a thank-you, a goodbye or small talk (in any language), "
+    "reply in the same language, in one or two short friendly sentences: say you answer questions about "
+    "MedTech (keep the name \"MedTech\" as is; rules, exams, grades, programs, certifications) and give one example question. "
+    "Otherwise (it is a real question, even a short one), reply exactly: NO"
+)
+
 REWRITE_SYSTEM = (
     "Rewrite the student's question about the university into a short, specific search query. "
     "Expand abbreviations if obvious (e.g. GPA, CGPA). Keep the student's key terms exactly. "
@@ -64,6 +71,13 @@ class Librarian:
 
         usage = Usage()
         timings = {}
+
+        # (0) Small talk ("hi", "merci", "مرحبا"...): only short messages are checked, in any language.
+        if len(question.split()) <= 4:
+            reply = chat("gpt-4o-mini", SMALL_TALK_SYSTEM, question, usage, max_tokens=80).strip()
+            if reply != "NO":
+                info = {"mode": "small talk", "reranked": False, "confident": None}
+                return self._finish(question, question, reply, [], [], info, usage, timings, t0, cache_key, settings)
 
         # (1) Rewrite
         query = question

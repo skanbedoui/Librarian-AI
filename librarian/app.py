@@ -152,6 +152,7 @@ digraph {
 | **Embedding** | Turn every chunk into a vector (a list of 1536 numbers) that captures its *meaning*. | Lets us find "retake a failed class" even when the guide says "Retaking Courses". |
 | **Keyword index (BM25)** | Classic search-engine scoring on exact words. | Great for exact terms: *CGPA*, *Dean's List*, *CHFI*, *BIM*. |
 | **Cache** | If the exact same question was asked before, reuse that answer. | Popular questions cost nothing and come back instantly. |
+| **Small talk** | A short message (4 words or less) is first checked by a small LLM: if it is only "hi", "merci", "مرحبا"…, it gets a friendly reply in the same language, with no search. | Greetings used to get "I don't know" or a random reply. |
 | **1. Hybrid search** | Run both searches and merge them with *Reciprocal Rank Fusion*: each chunk gets `1/(60+rank)` from each list. | Each search catches what the other misses. RRF only uses ranks, so we never compare apples (BM25) to oranges (cosine). |
 | **2. Rerank** | A small LLM reads the question with each of the top 10 chunks and scores relevance 0–10. **Skipped** when keyword and vector search already agree on the best chunk (about half the time). | Reading question and passage *together* is more accurate, but it costs time, so we only do it when the search is unsure. |
 | **3. Generate** | `gpt-4o-mini` sees only the top 3 chunks, numbered [1], [2], [3], and must cite one after every fact. | Every claim can be checked against its page. |

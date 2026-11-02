@@ -72,6 +72,8 @@ question?" — more accurate, but slower, so we only run it on the top 10. Ours 
 **Citations.** Chunks go into the prompt numbered `[1]`, `[2]`, ... and the prompt orders the
 model to put the number after each fact. The app then shows the page each number points to.
 
+**Small talk.** A message of 4 words or less is first checked by a small LLM. If it's only a greeting or thanks (any language), the bot replies in that language and skips the search (`SMALL_TALK_SYSTEM` in `rag/pipeline.py`).
+
 **"I don't know".** If the reranker's best score is below 3/10, nothing relevant was found, so we
 don't even call the answer model. And the model itself is told to start with the exact sentence
 *"I don't know based on the MedTech documents."* when the sources don't answer the question.
