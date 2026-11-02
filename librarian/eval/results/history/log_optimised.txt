@@ -1,4 +1,4 @@
-Saved -> C:\Users\skand\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc\scratch-workspaces\f77f08e3-c4c5-4958-bec3-c0e8969f7964\47a55c60-74a1-4a95-a1c4-7b0ea9d9897d\scratch-2026-10-26-831336\librarian\eval\results\generation_optimised.json
+Saved -> C:\Users\skand\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc\scratch-workspaces\f77f08e3-c4c5-4958-bec3-c0e8969f7964\47a55c60-74a1-4a95-a1c4-7b0ea9d9897d\scratch-2026-10-26-831336\librarian\eval\results\generation_optimised.json and C:\Users\skand\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc\scratch-workspaces\f77f08e3-c4c5-4958-bec3-c0e8969f7964\47a55c60-74a1-4a95-a1c4-7b0ea9d9897d\scratch-2026-10-26-831336\librarian\eval\results\runs\optimised_20261102T101704Z.jsonl
 {
   "config": "optimised",
   "settings": {
@@ -12,18 +12,22 @@ Saved -> C:\Users\skand\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc\scratch-w
     "use_cache": true,
     "min_relevance": 3.0
   },
-  "n_questions": 182,
-  "accuracy_overall": 0.9560439560439561,
-  "correctness_answerable": 0.9523809523809523,
-  "faithfulness": 1.0,
-  "citation_accuracy": 1.0,
+  "n_questions": 181,
+  "n_errors": 0,
+  "accuracy_overall": 0.9502762430939227,
+  "correctness_answerable": 0.9461077844311377,
+  "faithfulness": 0.8433734939759037,
+  "citation_accuracy": 0.9879518072289156,
   "idk_when_should": 1.0,
-  "idk_when_should_not": 0.005952380952380952,
-  "latency_p50_s": 1.4777992000017548,
-  "latency_p95_s": 2.503545184993709,
-  "cost_per_request_usd": 0.00025190087912087906,
-  "cost_per_request_list_usd": 0.00031783494505494497,
-  "cost_per_month_today_usd": 1.5114052747252744,
-  "cost_per_month_100x_usd": 151.14052747252745,
-  "rerank_rate": 0.5274725274725275
+  "idk_when_should_not": 0.005988023952095809,
+  "latency_p50_s": 1.6689249000046402,
+  "latency_p95_s": 2.816269299975829,
+  "cost_per_request_usd": 0.0002950787845303867,
+  "cost_per_request_list_usd": 0.0003168246408839779,
+  "cost_per_month_today_usd": 1.7704727071823205,
+  "cost_per_month_100x_usd": 177.04727071823206,
+  "rerank_rate": 0.5248618784530387,
+  "judge_prompt": "judge_prompt_v3.md",
+  "judge_cost_per_item_usd": 0.0004947602209944751,
+  "judge_latency_p50_s": 0.8869619999895804
 }

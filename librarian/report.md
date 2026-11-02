@@ -123,7 +123,11 @@ The remaining errors on the full corpus fall into four groups:
 - a name the bot could not find (Dr. Ons Najjar's role);
 - a near-topic answer for the gym question.
 
-Treat 100% faithfulness with care, because the judge may be lenient (postmortem §4).
+**Is the judge reliable?** We reuse our Project 1 harness, as the brief asks: P1's Cohen's kappa
+and JSON-parsing functions (`p1_harness/`) and its two bias checks (`eval/judge_reliability.py`).
+Position bias: the verdict followed the order of the answers in 1/30 swapped pairs. Verbosity
+bias: 0/30 padded wrong answers became "correct". Agreement with humans is **pending**: 60 answers
+are waiting for two labellers. Until then, treat 100% faithfulness with care (postmortem §4, §9).
 
 ## 5. Week 8: what we changed and what it saved
 

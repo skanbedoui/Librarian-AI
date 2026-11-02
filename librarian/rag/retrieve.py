@@ -16,6 +16,12 @@ from .config import INDEX_DIR
 from .index import load_index, ensure_index
 from .llm import embed, chat, Usage
 
+RERANK_SYSTEM = (
+    "You rate how useful each passage is for answering the question. 10 = directly answers "
+    'it, 5 = related but incomplete, 0 = unrelated. Reply in JSON: {"scores": [score for '
+    "passage 0, score for passage 1, ...]}"
+)
+
 STOPWORDS = set("""a an the of to in on for and or is are be by with at as it this that what which who
 how do does can i my me we our you your if from when where will would should there their""".split())
 
@@ -78,10 +84,7 @@ class Retriever:
         passages = "\n\n".join(
             f"[{n}] ({self.chunks[i]['section']})\n{self.chunks[i]['text'][:1200]}"
             for n, (i, _) in enumerate(candidates))
-        system = ("You rate how useful each passage is for answering the question. "
-                  "10 = directly answers it, 5 = related but incomplete, 0 = unrelated. "
-                  'Reply in JSON: {"scores": [score for passage 0, score for passage 1, ...]}')
-        raw = chat(model, system, f"Question: {query}\n\nPassages:\n{passages}", usage,
+        raw = chat(model, RERANK_SYSTEM, f"Question: {query}\n\nPassages:\n{passages}", usage,
                    json_mode=True, max_tokens=200)
         try:
             scores = json.loads(raw)["scores"]

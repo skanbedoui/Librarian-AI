@@ -59,9 +59,9 @@ trusting a score, because sometimes the bot is right and the test is wrong.
   words. That's why keyword search (BM25) beats vector search at Recall@1 in our ablation, and
   why Recall@5 saturates near 1.00. Real students write *"can I redo a class I flunked?"*, not
   *"Can I retake a course if I received a failing grade?"*.
-- Faithfulness and citation accuracy came out at **100%**. That's suspicious. The judge
-  (`gpt-4.1-mini`) is in the same model family as the generator and may be lenient.
-  *(Team: spot-check ~20 answers by hand against their cited pages and record what you find here.)*
+- Faithfulness and citation accuracy came out at **100%**. That's suspicious: the judge
+  (`gpt-4.1-mini`) is in the same model family as the generator and may be lenient. The human
+  labels (§9) will tell.
 - With 181 questions, one question = 0.55 points. Differences under ~2 points are within
   run-to-run noise.
 
@@ -109,9 +109,9 @@ brochures (65 → 127 pages). What we learned:
   answers were incomplete (the bot was right: "no prerequisites, *but* basic networking is
   expected"; "12 hours total, 4 per week") and 1 question was impossible: the catalogue's course
   table is flattened, so courses of the three engineering programs come out interleaved. We fixed
-  or removed those 3 and re-graded the same answers. We did **not** change the judge or the 4
+  or removed those 3 and re-graded the same answers. We did **not** loosen the judge to accept the 4
   other strict-but-defensible failures (e.g. "starts in August" for "31st August"), because
-  editing the grader after seeing its results would just be moving the goalposts.
+  editing the grader after seeing the bot's score would just be moving the goalposts.
 - **More documents means more ways to be confused.** Old and new documents can disagree, so the
   prompt now tells the model to prefer the most recent document and say so.
 
@@ -122,3 +122,19 @@ brochures (65 → 127 pages). What we learned:
   would fix the date confusion in item 3.
 - The two guides overlap, and the app searches everything (no program picker), so answers can
   mix their rules. The filter still exists in the code (`files=`) if we want it back.
+
+## 9. Reusing our Project 1 harness
+
+The Project 2 brief says to measure correctness "using your P1 harness". At first we wrote a new
+judge and never tested it. We then reused P1: its JSON-parsing and Cohen's kappa functions are
+copied unchanged into `p1_harness/`, and its judge checks run in `eval/judge_reliability.py`.
+
+- **Position bias** (swap the order of two answers): the verdict followed the position in 1 of 30
+  pairs (3.3%).
+- **Verbosity bias** (pad a wrong answer with polite filler): 0 of 30 became "correct".
+- **Agreement with humans: not measured yet.** `data/judge_labelling_set.jsonl` has 60 answers
+  waiting for two labellers (`data/labelling_guide.md`). This is the most important P1 check, and
+  until it's done the 100% faithfulness score (§4) stays unverified.
+
+**Lesson:** a judge you have not tested is just another model with an opinion. We should have
+reused the P1 checks from the first day instead of at the end.

@@ -7,7 +7,12 @@ For every question we run the FULL pipeline, then an LLM judge checks:
   citations_accurate - do the cited [n] sources really say what they are cited for?
 For unanswerable questions, "correct" means the bot said "I don't know".
 
-We also record end-to-end latency (p50/p95) and cost per request.
+We also record end-to-end latency (p50/p95) and cost per request, and the judge's own cost and
+latency per item.
+
+Harness rules reused from Project 1:
+  * one row per item, ALWAYS: if something fails, the item still gets a row with status "error";
+  * the judge answers in a fixed JSON schema, parsed with P1's parse_json_response.
 
 Run:  python -m eval.eval_generation --config baseline
       python -m eval.eval_generation --config optimised
@@ -15,6 +20,7 @@ Run:  python -m eval.eval_generation --config baseline
 import argparse
 import json
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -22,8 +28,9 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from rag.config import DATA_DIR, RESULTS_DIR, BASELINE, OPTIMISED
-from rag.llm import chat
+from rag.llm import chat, Usage
 from rag.pipeline import Librarian
+from p1_harness.core import parse_json_response
 
 CONFIGS = {"baseline": BASELINE, "optimised": OPTIMISED}
 JUDGE_MODEL = "gpt-4.1-mini"
@@ -37,23 +44,37 @@ Given the question, the gold answer, the bot's answer and the sources it was sho
  "reason": "one short sentence"}"""
 
 
-def judge(q, r):
-    if r["is_idk"]:
-        # Saying "I don't know" invents nothing, so it is faithful; it is correct only if
-        # the question really was unanswerable.
-        return {"correct": not q["answerable"], "faithful": True, "citations_accurate": True,
-                "reason": "bot said I don't know"}
-    if not q["answerable"]:
-        return {"correct": False, "faithful": False, "citations_accurate": False,
-                "reason": "answered a question the guides cannot answer"}
-    sources = "\n\n".join(f"[{n}] {c['text']}" for n, c in enumerate(r["context"], start=1))
+def judge_answer(question, gold, answer, sources, usage=None):
+    """One call to the LLM judge. Also used by eval/judge_reliability.py."""
+    numbered = "\n\n".join(f"[{n}] {text}" for n, text in enumerate(sources, start=1))
     raw = chat(JUDGE_MODEL, JUDGE_SYSTEM,
-               f"Question: {q['question']}\nGold answer: {q['answer']}\n\nBot answer: {r['answer']}\n\n"
-               f"Sources:\n{sources}", json_mode=True, max_tokens=200)
+               f"Question: {question}\nGold answer: {gold}\n\nBot answer: {answer}\n\n"
+               f"Sources:\n{numbered}", usage, json_mode=True, max_tokens=200)
     try:
-        return json.loads(raw)
+        v = parse_json_response(raw)
     except ValueError:
         return {"correct": False, "faithful": False, "citations_accurate": False, "reason": "judge error"}
+    return {"correct": bool(v.get("correct")), "faithful": bool(v.get("faithful")),
+            "citations_accurate": bool(v.get("citations_accurate")), "reason": str(v.get("reason", ""))}
+
+
+def judge(q, r):
+    """Grade one bot result. Returns the verdict + what the judge itself cost."""
+    usage, t = Usage(), time.perf_counter()
+    if r["is_idk"]:
+        # Saying "I don't know" invents nothing, so it is faithful; it is correct only if
+        # the question really was unanswerable. (No LLM call needed.)
+        v = {"correct": not q["answerable"], "faithful": True, "citations_accurate": True,
+             "reason": "bot said I don't know"}
+    elif not q["answerable"]:
+        v = {"correct": False, "faithful": False, "citations_accurate": False,
+             "reason": "answered a question the documents cannot answer"}
+    else:
+        v = judge_answer(q["question"], q["answer"], r["answer"], [c["text"] for c in r["context"]], usage)
+    v["verdict"] = "good" if v["correct"] else "bad"   # same label as Project 1
+    v["judge_cost"] = usage.cost
+    v["judge_latency"] = time.perf_counter() - t
+    return v
 
 
 def run_eval(settings, name, limit=None, save=True):
@@ -62,14 +83,24 @@ def run_eval(settings, name, limit=None, save=True):
     bot = Librarian()
 
     def run(q):
-        r = bot.ask(q["question"], settings)
-        j = judge(q, r)
-        return {"id": q["id"], "question": q["question"], "gold": q["answer"], "answerable": q["answerable"],
-                "answer": r["answer"], "is_idk": r["is_idk"], "latency": r["latency"], "cost": r["cost"], "cost_list": r["cost_list"],
-                "reranked": r["search_info"]["reranked"], **j}
+        row = {"id": q["id"], "question": q["question"], "gold": q["answer"], "answerable": q["answerable"]}
+        try:
+            r = bot.ask(q["question"], settings)
+            row.update({"answer": r["answer"], "is_idk": r["is_idk"], "latency": r["latency"],
+                        "cost": r["cost"], "cost_list": r["cost_list"],
+                        "reranked": r["search_info"]["reranked"],
+                        "sources": [{"file": c["file"], "page": c["page"], "text": c["text"]} for c in r["context"]],
+                        **judge(q, r), "status": "ok"})
+        except Exception as exc:   # P1 rule: keep one result row for every input item
+            row.update({"status": "error", "error": repr(exc)})
+        return row
 
     with ThreadPoolExecutor(4) as pool:   # same concurrency for every config -> fair comparison
-        rows = list(pool.map(run, questions))
+        all_rows = list(pool.map(run, questions))
+    rows = [r for r in all_rows if r["status"] == "ok"]
+    errors = len(all_rows) - len(rows)
+    if errors:
+        print(f"WARNING: {errors} item(s) failed - see the 'error' field in the JSONL")
 
     ans = [r for r in rows if r["answerable"]]
     una = [r for r in rows if not r["answerable"]]
@@ -80,6 +111,7 @@ def run_eval(settings, name, limit=None, save=True):
         "config": name,
         "settings": settings.__dict__,
         "n_questions": len(rows),
+        "n_errors": errors,
         "accuracy_overall": float(np.mean([r["correct"] for r in rows])),   # the Week-8 "accuracy"
         "correctness_answerable": float(np.mean([r["correct"] for r in ans])),
         "faithfulness": float(np.mean([r["faithful"] for r in answered])) if answered else None,
@@ -93,11 +125,15 @@ def run_eval(settings, name, limit=None, save=True):
         "cost_per_month_today_usd": cost * REQUESTS_PER_DAY * 30,
         "cost_per_month_100x_usd": cost * REQUESTS_PER_DAY * 30 * 100,
         "rerank_rate": float(np.mean([r["reranked"] for r in rows])),
+        # The judge itself (P1 "What to measure": cost and latency per judged item)
+        "judge_cost_per_item_usd": float(np.mean([r["judge_cost"] for r in rows])),
+        "judge_latency_p50_s": float(np.percentile([r["judge_latency"] for r in rows], 50)),
     }
     if save:
         RESULTS_DIR.mkdir(parents=True, exist_ok=True)
         out = RESULTS_DIR / f"generation_{name}.json"
-        out.write_text(json.dumps({"summary": summary, "rows": rows}, indent=1, ensure_ascii=False), encoding="utf-8")
+        out.write_text(json.dumps({"summary": summary, "rows": all_rows}, indent=1, ensure_ascii=False),
+                       encoding="utf-8")
         print(f"Saved -> {out}")
     return summary
 

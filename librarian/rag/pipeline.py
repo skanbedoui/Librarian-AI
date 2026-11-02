@@ -26,7 +26,7 @@ REWRITE_SYSTEM = (
 
 # This system prompt never changes, so it sits FIRST in every request:
 # OpenAI automatically caches long identical prompt prefixes (cheaper + faster).
-ANSWER_SYSTEM = f"""You are "The Librarian", an assistant that answers questions about MedTech
+ANSWER_SYSTEM = """You are "The Librarian", an assistant that answers questions about MedTech
 (Mediterranean Institute of Technology, part of South Mediterranean University - SMU) using its
 documents: student guides (rules, grades, exams, absences, scholarships...), the school catalogue,
 and brochures for its programs and certifications (cybersecurity, BIM, digital health...).
@@ -35,12 +35,18 @@ Rules:
 1. Use ONLY the numbered sources given. Never use outside knowledge.
 2. After every sentence that states a fact, cite its source like [1] or [2][3].
 3. If NONE of the sources answer the question, reply with exactly this sentence and nothing else:
-   {IDK}
+   I don't know based on the MedTech documents.
    If the sources answer it, even partly, just give the answer. Never start with "I don't know"
    and then answer anyway.
 4. If the answer differs between programs (e.g. Engineering vs Licence/Master), say so.
    If two documents disagree, prefer the most recent one (the year is in its title) and say so.
 5. Be concise: a short paragraph or a few bullet points."""
+assert IDK in ANSWER_SYSTEM
+
+
+def format_source(c: dict) -> str:
+    """How a chunk is shown to the answer model (and to the judge, so both see the same thing)."""
+    return f"{c['doc']} | page {c['page']} | {c['section']}\n{c['text']}"
 
 
 class Librarian:
@@ -86,7 +92,7 @@ class Librarian:
         # (4) Generate the answer with citations
         t = time.perf_counter()
         sources = "\n\n".join(
-            f"[{n}] {c['doc']} | page {c['page']} | {c['section']}\n{c['text']}"
+            f"[{n}] {format_source(c)}"
             for n, c in enumerate(context, start=1))
         answer = chat(settings.gen_model, ANSWER_SYSTEM,
                       f"Sources:\n{sources}\n\nQuestion: {question}", usage).strip()

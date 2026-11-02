@@ -40,6 +40,8 @@ question ──► rag/pipeline.py ──► rag/retrieve.py ──────�
 | `eval/chunk_sweep.py` | Tests chunk sizes 100 / 200 / 400. | |
 | `eval/eval_generation.py` | Runs the full bot on every question; an LLM judge grades correctness, faithfulness, citations. Also latency and cost. | `judge`, the `summary` dict. |
 | `eval/cache_demo.py` | Shows what the answer cache saves on repeated questions. | |
+| `p1_harness/core.py` | Three functions copied unchanged from our Project 1 harness. | `compute_cohen_kappa` (agreement between two label lists), `parse_json_response` (reads the judge's JSON). |
+| `eval/judge_reliability.py` | The P1 checks on our judge: agreement with humans, position bias, verbosity bias. | `position_bias` (ask twice with the order swapped), `verbosity_bias` (pad a wrong answer, see if it passes). |
 
 ## 3. Key concepts, explained simply
 
@@ -116,7 +118,10 @@ reranker mainly moves the right passage to position 1 (Recall@1, MRR).
 passage, plus 14 questions the documents can't answer. An LLM judge compares the bot's answer
 with the gold answer and checks every claim against the cited chunks.
 
-**Isn't an LLM judging an LLM biased?** Yes, a bit — it's in the postmortem. The judge sees the
+**Isn't an LLM judging an LLM biased?** We tested it with our Project 1 harness, as the brief asks:
+swapping the order of two answers changed the verdict in 1/30 cases (position bias), and padding a
+wrong answer never made it "correct" (verbosity bias). Agreement with humans is measured once two
+of us label `data/judge_labelling_set.jsonl`. The judge sees the
 gold answer, which limits how lenient it can be on correctness, and reading the failures by hand
 is how we found the wrong gold answers (postmortem §3).
 

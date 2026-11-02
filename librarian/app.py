@@ -227,7 +227,22 @@ with tab_eval:
     else:
         st.info("Run `python -m eval.eval_generation --config baseline` and `--config optimised`.")
 
-    st.subheader("3. Feedback from real users")
+    st.subheader("3. Can we trust the judge? (Project 1 harness checks)")
+    rep = load("judge_reliability.json")
+    if rep:
+        h, p, vb = rep["human_agreement"], rep["position_bias"], rep["verbosity_bias"]
+        st.dataframe(pd.DataFrame([
+            {"Check": "Agreement with humans (Cohen's kappa)",
+             "Result": h["judge_human_kappa"] if h["status"] == "ok" else "waiting for human labels"},
+            {"Check": "Position bias: verdict followed the order, not the answer",
+             "Result": f"{p['flip_count']}/{p['pairs']} ({p['flip_rate_pct']}%)"},
+            {"Check": "Verbosity bias: wrong answer became 'correct' after padding",
+             "Result": f"{vb['flip_count']}/{vb['items']} ({vb['flip_rate_pct']}%)"},
+        ]), hide_index=True, use_container_width=True)
+    else:
+        st.info("Run `python -m eval.judge_reliability` to fill this section.")
+
+    st.subheader("4. Feedback from real users")
     fb = DATA_DIR / "feedback.jsonl"
     if fb.exists():
         votes = [json.loads(l) for l in fb.read_text(encoding="utf-8").splitlines() if l.strip()]

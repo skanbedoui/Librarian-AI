@@ -1,0 +1,444 @@
+{
+ "human_agreement": {
+  "status": "waiting for human labels (0/60 items labelled twice)"
+ },
+ "position_bias": {
+  "pairs": 30,
+  "flip_count": 1,
+  "flip_rate_pct": 3.3,
+  "consistent_count": 20,
+  "prefers_baseline": 5,
+  "prefers_optimised": 2,
+  "details": [
+   {
+    "id": 32,
+    "order1_AB": "TIE",
+    "order2_BA": "TIE",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 58,
+    "order1_AB": "A",
+    "order2_BA": "B",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 74,
+    "order1_AB": "TIE",
+    "order2_BA": "TIE",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 66,
+    "order1_AB": "TIE",
+    "order2_BA": "B",
+    "position_biased": false,
+    "consistent": false
+   },
+   {
+    "id": 84,
+    "order1_AB": "A",
+    "order2_BA": "A",
+    "position_biased": true,
+    "consistent": false
+   },
+   {
+    "id": 17,
+    "order1_AB": "A",
+    "order2_BA": "B",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 149,
+    "order1_AB": "B",
+    "order2_BA": "A",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 171,
+    "order1_AB": "B",
+    "order2_BA": "A",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 183,
+    "order1_AB": "TIE",
+    "order2_BA": "TIE",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 36,
+    "order1_AB": "TIE",
+    "order2_BA": "B",
+    "position_biased": false,
+    "consistent": false
+   },
+   {
+    "id": 57,
+    "order1_AB": "A",
+    "order2_BA": "B",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 125,
+    "order1_AB": "TIE",
+    "order2_BA": "TIE",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 26,
+    "order1_AB": "TIE",
+    "order2_BA": "TIE",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 91,
+    "order1_AB": "TIE",
+    "order2_BA": "B",
+    "position_biased": false,
+    "consistent": false
+   },
+   {
+    "id": 28,
+    "order1_AB": "TIE",
+    "order2_BA": "TIE",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 107,
+    "order1_AB": "TIE",
+    "order2_BA": "B",
+    "position_biased": false,
+    "consistent": false
+   },
+   {
+    "id": 83,
+    "order1_AB": "B",
+    "order2_BA": "TIE",
+    "position_biased": false,
+    "consistent": false
+   },
+   {
+    "id": 72,
+    "order1_AB": "B",
+    "order2_BA": "TIE",
+    "position_biased": false,
+    "consistent": false
+   },
+   {
+    "id": 39,
+    "order1_AB": "A",
+    "order2_BA": "B",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 62,
+    "order1_AB": "TIE",
+    "order2_BA": "TIE",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 177,
+    "order1_AB": "TIE",
+    "order2_BA": "TIE",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 116,
+    "order1_AB": "A",
+    "order2_BA": "B",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 195,
+    "order1_AB": "TIE",
+    "order2_BA": "TIE",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 8,
+    "order1_AB": "TIE",
+    "order2_BA": "TIE",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 65,
+    "order1_AB": "B",
+    "order2_BA": "TIE",
+    "position_biased": false,
+    "consistent": false
+   },
+   {
+    "id": 25,
+    "order1_AB": "TIE",
+    "order2_BA": "TIE",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 115,
+    "order1_AB": "TIE",
+    "order2_BA": "TIE",
+    "position_biased": false,
+    "consistent": true
+   },
+   {
+    "id": 93,
+    "order1_AB": "B",
+    "order2_BA": "TIE",
+    "position_biased": false,
+    "consistent": false
+   },
+   {
+    "id": 5,
+    "order1_AB": "TIE",
+    "order2_BA": "B",
+    "position_biased": false,
+    "consistent": false
+   },
+   {
+    "id": 23,
+    "order1_AB": "TIE",
+    "order2_BA": "TIE",
+    "position_biased": false,
+    "consistent": true
+   }
+  ]
+ },
+ "verbosity_bias": {
+  "items": 30,
+  "plain_wrongly_accepted": 2,
+  "flip_count": 0,
+  "flip_rate_pct": 0.0,
+  "details": [
+   {
+    "id": 83,
+    "wrong_answer": "Creating a national Center of Excellence for BIM research with joint university–industry pilot programs and embedding certification in public-sector hiring [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 163,
+    "wrong_answer": "Zero on assignment, written warning, AM on transcript, community service, F in course, Disciplinary Committee [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 123,
+    "wrong_answer": "career information, placement services, career counseling, internships, job seeking skills, job fairs, workshops, company visits, CV proof-reading [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 165,
+    "wrong_answer": "During their first lecture [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 184,
+    "wrong_answer": "Submit a completed appeal form to the Office of Registrar within one week of the absence date; appeals sent by email will not be accepted. [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 135,
+    "wrong_answer": "over 200 [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 37,
+    "wrong_answer": "Respect for diversity and integrity with honesty and transparency [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 102,
+    "wrong_answer": "official academic transcript and syllabi [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 112,
+    "wrong_answer": "Respect, integrity, and collaboration [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 87,
+    "wrong_answer": "Zero on assignment, written warning, AM on transcript, community service, F in course, Disciplinary Committee [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 171,
+    "wrong_answer": "communication, collaboration, critical thinking, leadership, decision-making [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 60,
+    "wrong_answer": "Yes, you may retake a course after failing or to improve your GPA, within the maximum allowed retakes. [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 50,
+    "wrong_answer": "Certification programs, regional cooperation, national roadmap with milestones [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 190,
+    "wrong_answer": "59.15% [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 74,
+    "wrong_answer": "Accredited on December 12, 2025, valid until September 30, 2031 [1]",
+    "plain_correct": true,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 157,
+    "wrong_answer": "architects, engineers, builders, developers, financiers, asset managers, and facilities managers [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 52,
+    "wrong_answer": "16 [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 63,
+    "wrong_answer": "12 modules [1]",
+    "plain_correct": true,
+    "padded_correct": true,
+    "verbosity_biased": false
+   },
+   {
+    "id": 32,
+    "wrong_answer": "C- or above [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 143,
+    "wrong_answer": "3.3 CGPA [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 39,
+    "wrong_answer": "By multiplying the grade point value of each letter grade by the credit hours of the course, summing these grade points for all courses in the term, and dividing by the total credit hours taken that term. [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 100,
+    "wrong_answer": "December 9th to December 15th [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 151,
+    "wrong_answer": "3 extra absences [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 144,
+    "wrong_answer": "Plagiarism, cheating, presenting falsified research data, submitting the same assignment in more than one course without consent [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 99,
+    "wrong_answer": "Certificate of registration at SMU, first page of passport, Residency Card, housing contract [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 55,
+    "wrong_answer": "twice, once halfway through the term and once at the end [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 131,
+    "wrong_answer": "No, appeals sent by email will not be processed [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 67,
+    "wrong_answer": "at least 7 days [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 156,
+    "wrong_answer": "40 hours total, with 4 hours each week [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   },
+   {
+    "id": 126,
+    "wrong_answer": "Evening classes from 6:30 PM to 8:30 PM Monday and Tuesday or Thursday and Friday; Weekend classes from 10:00 AM to 12:00 PM Saturday and Sunday [1]",
+    "plain_correct": false,
+    "padded_correct": false,
+    "verbosity_biased": false
+   }
+  ]
+ },
+ "cost_usd": 0.025567200000000012
+}

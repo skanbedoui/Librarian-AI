@@ -77,6 +77,18 @@ The app runs the **optimised** version. The baseline is our first version, kept 
 
 Details are in `optimisation.md`. The judge is an LLM, so treat 100% faithfulness with care (`postmortem.md`).
 
+### Can we trust the judge? (our Project 1 harness)
+
+As the brief asks, correctness is measured with our P1 harness: P1's JSON-parsing and Cohen's kappa
+functions are copied unchanged into `p1_harness/`, and its judge checks run with
+`python -m eval.judge_reliability`:
+
+| Check | Result |
+|---|---|
+| Position bias: swap two answers, does the verdict follow the order? | 1/30 (3.3%) |
+| Verbosity bias: pad a wrong answer with filler, does it become "correct"? | 0/30 (0%) |
+| Agreement with humans (Cohen's kappa) | **pending**: 2 team members must label `data/judge_labelling_set.jsonl` (guide: `data/labelling_guide.md`) |
+
 ## Repository map
 
 | Path | What's inside |
@@ -87,7 +99,9 @@ Details are in `optimisation.md`. The judge is an LLM, so treat 100% faithfulnes
 | `index/` | Pre-built index: `chunks.json` + `embeddings.npy` + `manifest.json` (which PDFs it was built from) |
 | `data/eval_questions.json` | 181 eval questions with gold answers and source passages |
 | `data/eval_review_log.json` | Questions we removed or fixed during manual review, and why |
-| `eval/` | `eval_retrieval.py` (recall@k + ablation), `chunk_sweep.py`, `eval_generation.py` (correctness, faithfulness, citations, latency, cost), `optimisation_steps.py`, `cache_demo.py`, `make_questions.py`; results in `eval/results/` |
+| `data/judge_labelling_set.jsonl`, `data/labelling_guide.md` | 60 answers for two humans to label, to measure judge-vs-human agreement (P1) |
+| `p1_harness/` | Functions reused unchanged from our Project 1 harness (Cohen's kappa, JSON parsing) |
+| `eval/` | `eval_retrieval.py` (recall@k + ablation), `chunk_sweep.py`, `eval_generation.py` (correctness, faithfulness, citations, latency, cost), `optimisation_steps.py`, `cache_demo.py`, `make_questions.py`, `judge_reliability.py` (P1 judge checks); results in `eval/results/` |
 | `design.md` | Chunking, index choice, retrieval design, known failure cases |
 | `optimisation.md` | Week 8 report with before/after numbers |
 | `postmortem.md` | What went wrong and what we learned |
